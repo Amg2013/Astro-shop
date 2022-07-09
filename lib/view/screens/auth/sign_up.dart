@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:shooping_app/utils/my_string.dart';
 
 import '../../../utils/theme.dart';
 import '../../widget/auth_button.dart';
@@ -15,6 +16,7 @@ class SignUpScreen extends StatelessWidget {
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -34,97 +36,117 @@ class SignUpScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(
                         left: 25, right: 25, top: 0, bottom: 0),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            TextUtils(
-                                text: 'SIGN',
-                                fontSize: 35,
-                                color: Get.isDarkMode ? mainColor : pinkClr,
-                                fontWeight: FontWeight.w500,
-                                underLine: TextDecoration.none),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            TextUtils(
-                                text: 'UP',
-                                fontSize: 35,
-                                color: Get.isDarkMode
-                                    ? Colors.black
-                                    : Colors.white,
-                                fontWeight: FontWeight.w500,
-                                underLine: TextDecoration.none),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        AuthTextFormField(
-                          controller: userNameController,
-                          validator: (value) {},
-                          obscureText: false,
-                          hintText: 'User Name',
-                          prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/user.png')
-                              : Icon(
-                                  Icons.person,
-                                  color: pinkClr,
-                                  size: 30,
-                                ),
-                          suffixIcon: Text(''),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        AuthTextFormField(
-                          controller: emailController,
-                          validator: (value) {},
-                          obscureText: false,
-                          hintText: 'Email',
-                          prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/email.png')
-                              : Icon(
-                                  Icons.email,
-                                  color: pinkClr,
-                                  size: 30,
-                                ),
-                          suffixIcon: Text(''),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        AuthTextFormField(
-                          controller: passwordController,
-                          validator: (value) {},
-                          obscureText: true,
-                          hintText: 'Password',
-                          prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/lock.png')
-                              : Icon(
-                                  Icons.lock,
-                                  color: pinkClr,
-                                  size: 30,
-                                ),
-                          suffixIcon: Text(''),
-                        ),
-                        SizedBox(
-                          height: 50,
-                        ),
-                        CheckWidget(),
-                        SizedBox(
-                          height: 50,
-                        ),
-                        Expanded(
-                          child: AuthButton(
-                            onPressed: () {},
-                            text: 'SIGN UP',
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              TextUtils(
+                                  text: 'SIGN',
+                                  fontSize: 35,
+                                  color: Get.isDarkMode ? mainColor : pinkClr,
+                                  fontWeight: FontWeight.w500,
+                                  underLine: TextDecoration.none),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              TextUtils(
+                                  text: 'UP',
+                                  fontSize: 35,
+                                  color: Get.isDarkMode
+                                      ? Colors.black
+                                      : Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  underLine: TextDecoration.none),
+                            ],
                           ),
-                        ),
-                        SizedBox(
-                          height: 55,
-                        )
-                      ],
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          AuthTextFormField(
+                            controller: userNameController,
+                            validator: (value) {
+                              if (!RegExp(validationName)
+                                  .hasMatch(value ?? '')) {
+                                return 'Invalid name';
+                              }
+                              return null;
+                            },
+                            obscureText: false,
+                            hintText: 'User Name',
+                            prefixIcon: Get.isDarkMode
+                                ? Image.asset('assets/images/user.png')
+                                : Icon(
+                                    Icons.person,
+                                    color: pinkClr,
+                                    size: 30,
+                                  ),
+                            suffixIcon: Text(''),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          AuthTextFormField(
+                            controller: emailController,
+                            validator: (value) {
+                              if (!RegExp(validationEmail)
+                                  .hasMatch(value ?? '')) {
+                                return 'Invalid Email';
+                              }
+                              return null;
+                            },
+                            obscureText: false,
+                            hintText: 'Email',
+                            prefixIcon: Get.isDarkMode
+                                ? Image.asset('assets/images/email.png')
+                                : Icon(
+                                    Icons.email,
+                                    color: pinkClr,
+                                    size: 30,
+                                  ),
+                            suffixIcon: Text(''),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          AuthTextFormField(
+                            controller: passwordController,
+                            validator: (value) {
+                              if (value.toString().length < 6) {
+                                return 'write a strong password';
+                              }
+                              return null;
+                            },
+                            obscureText: true,
+                            hintText: 'Password',
+                            prefixIcon: Get.isDarkMode
+                                ? Image.asset('assets/images/lock.png')
+                                : Icon(
+                                    Icons.lock,
+                                    color: pinkClr,
+                                    size: 30,
+                                  ),
+                            suffixIcon: Text(''),
+                          ),
+                          SizedBox(
+                            height: 50,
+                          ),
+                          CheckWidget(),
+                          SizedBox(
+                            height: 50,
+                          ),
+                          Expanded(
+                            child: AuthButton(
+                              onPressed: () {},
+                              text: 'SIGN UP',
+                            ),
+                          ),
+                          SizedBox(
+                            height: 55,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
