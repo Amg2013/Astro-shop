@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/utils/my_string.dart';
 
 import '../../../utils/theme.dart';
@@ -110,25 +111,41 @@ class SignUpScreen extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          AuthTextFormField(
-                            controller: passwordController,
-                            validator: (value) {
-                              if (value.toString().length < 6) {
-                                return 'write a strong password';
-                              }
-                              return null;
-                            },
-                            obscureText: true,
-                            hintText: 'Password',
-                            prefixIcon: Get.isDarkMode
-                                ? Image.asset('assets/images/lock.png')
-                                : Icon(
-                                    Icons.lock,
-                                    color: pinkClr,
-                                    size: 30,
-                                  ),
-                            suffixIcon: Text(''),
-                          ),
+                          GetBuilder<AuthController>(builder: (controller) {
+                            return AuthTextFormField(
+                              controller: passwordController,
+                              validator: (value) {
+                                if (value.toString().length < 6) {
+                                  return 'write a strong password';
+                                }
+                                return null;
+                              },
+                              obscureText:
+                                  controller.isVisibility ? false : true,
+                              hintText: 'Password',
+                              prefixIcon: Get.isDarkMode
+                                  ? Image.asset('assets/images/lock.png')
+                                  : Icon(
+                                      Icons.lock,
+                                      color: pinkClr,
+                                      size: 30,
+                                    ),
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  controller.visibility();
+                                },
+                                icon: controller.isVisibility
+                                    ? Icon(
+                                        Icons.visibility,
+                                        color: Colors.black,
+                                      )
+                                    : Icon(
+                                        Icons.visibility_off,
+                                        color: Colors.black,
+                                      ),
+                              ),
+                            );
+                          }),
                           SizedBox(
                             height: 50,
                           ),
