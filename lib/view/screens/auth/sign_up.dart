@@ -149,7 +149,7 @@ class SignUpScreen extends StatelessWidget {
                           SizedBox(
                             height: 50,
                           ),
-                          CheckWidget(),
+                          Expanded(child: CheckWidget()),
                           SizedBox(
                             height: 50,
                           ),
