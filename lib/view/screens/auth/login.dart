@@ -126,25 +126,22 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             height: 12,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(),
-                              GestureDetector(
-                                onTap: () {
-                                  Get.offNamed(
-                                      AppRoutes.forgetPasswordScreenRoute);
-                                },
-                                child: TextUtils(
-                                    text: 'Forget password?',
-                                    fontSize: 18,
-                                    color: Get.isDarkMode
-                                        ? Colors.black
-                                        : Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    underLine: TextDecoration.none),
-                              ),
-                            ],
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.toNamed(
+                                    AppRoutes.forgetPasswordScreenRoute);
+                              },
+                              child: TextUtils(
+                                  text: 'Forget password?',
+                                  fontSize: 18,
+                                  color: Get.isDarkMode
+                                      ? Colors.black
+                                      : Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  underLine: TextDecoration.none),
+                            ),
                           ),
                           SizedBox(
                             height: 80,
