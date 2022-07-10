@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextUtils extends StatelessWidget {
-  final String text;
-  final double fontSize;
-  final Color color;
-  final FontWeight fontWeight;
-  final TextDecoration underLine;
+  String text;
+  double fontSize;
+  Color color;
+  FontWeight fontWeight;
+  TextDecoration underLine;
 
-  const TextUtils(
-      {Key? key,
-      required this.text,
-      required this.fontSize,
+  TextUtils(
+      {required this.fontSize,
       required this.color,
       required this.fontWeight,
-      required this.underLine})
-      : super(key: key);
+      required this.underLine,
+      required this.text});
 
   @override
   Widget build(BuildContext context) {
