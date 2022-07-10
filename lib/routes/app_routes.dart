@@ -23,6 +23,6 @@ class AppRoutes {
         binding: AuthBinding()),
     GetPage(
         name: AppRoutes.forgetPasswordScreenRoute,
-        page: () => const ForgetPassword())
+        page: () => ForgetPasswordScreen())
   ];
 }
