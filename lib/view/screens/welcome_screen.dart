@@ -94,7 +94,7 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       Get.offAllNamed(AppRoutes.loginScreenRoute);
                     },
-                    child: const TextUtils(
+                    child: TextUtils(
                       text: 'Get Start',
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -107,7 +107,7 @@ class WelcomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const TextUtils(
+                    TextUtils(
                       text: 'Do not have an Account?',
                       fontSize: 18,
                       color: Colors.white,

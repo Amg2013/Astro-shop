@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
+import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/my_string.dart';
 
 import '../../../utils/theme.dart';
@@ -169,7 +170,9 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 DownContainer(
                     text: 'Already have an account?',
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offNamed(AppRoutes.loginScreenRoute);
+                    },
                     textType: 'Login')
               ],
             ),
