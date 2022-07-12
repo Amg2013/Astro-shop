@@ -4,7 +4,6 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/my_string.dart';
-
 import '../../../utils/theme.dart';
 import '../../widget/auth_button.dart';
 import '../../widget/auth_text_field.dart';

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "948881366565",
+    "project_id": "asroo-shop-getx-bc19d",
+    "storage_bucket": "asroo-shop-getx-bc19d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948881366565:android:58f81455245716ea7e29cc",
+        "android_client_info": {
+          "package_name": "com.shehab.shooping_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948881366565-j7bqul966ekt2l91thvuakjeeqqloslt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFQMZl6dcYKXipl1vH-niSXSGXLp4Sx_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948881366565-j7bqul966ekt2l91thvuakjeeqqloslt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
