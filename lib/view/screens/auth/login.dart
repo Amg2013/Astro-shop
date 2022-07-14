@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/my_string.dart';
+
 import '../../../utils/theme.dart';
 import '../../widget/auth_button.dart';
 import '../../widget/auth_text_field.dart';
@@ -16,6 +17,7 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  final controller = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                          GetBuilder<AuthController>(builder: (controller) {
+                          GetBuilder<AuthController>(builder: (_) {
                             return AuthTextFormField(
                               controller: passwordController,
                               validator: (value) {
@@ -145,9 +147,21 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             height: 80,
                           ),
-                          AuthButton(
-                            onPressed: () {},
-                            text: 'LOG IN',
+                          GetBuilder<AuthController>(
+                            builder: (_) {
+                              return AuthButton(
+                                onPressed: () {
+                                  if (formKey.currentState!.validate() ==
+                                      true) {
+                                    String email = emailController.text.trim();
+                                    String password = passwordController.text;
+                                    controller.loginUsingFirebase(
+                                        email: email, password: password);
+                                  }
+                                },
+                                text: 'LOG IN',
+                              );
+                            },
                           ),
                           SizedBox(
                             height: 10,
