@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/routes/app_routes.dart';
 
 class AuthController extends GetxController {
   bool isVisibility = false;
@@ -27,8 +28,9 @@ class AuthController extends GetxController {
         password: password,
       );
       update();
+      Get.offNamed(AppRoutes.mainScreenRoute);
     } on FirebaseAuthException catch (error) {
-      String title = error.code.replaceAll(RegExp('_'), ' ');
+      String title = error.code.replaceAll(RegExp('-'), ' ');
       String message = '';
       if (error.code == 'weak-password') {
         message = 'The password provided is too weak.';
@@ -38,7 +40,9 @@ class AuthController extends GetxController {
         message = error.message.toString();
       }
       Get.snackbar(title, message,
-          backgroundColor: Colors.green, colorText: Colors.white);
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white);
     } catch (error) {
       Get.snackbar('Error!', error.toString(),
           snackPosition: SnackPosition.BOTTOM,
