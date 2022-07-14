@@ -25,7 +25,8 @@ class AppRoutes {
         binding: AuthBinding()),
     GetPage(
         name: AppRoutes.forgetPasswordScreenRoute,
-        page: () => ForgetPasswordScreen()),
+        page: () => ForgetPasswordScreen(),
+        binding: AuthBinding()),
     GetPage(name: AppRoutes.mainScreenRoute, page: () => const MainScreen()),
   ];
 }

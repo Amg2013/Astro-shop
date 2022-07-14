@@ -90,5 +90,29 @@ class AuthController extends GetxController {
 
   void googleSignUpApp() {}
 
-  void resetPassword() {}
+  void resetPassword(String email) async {
+    try {
+      await auth.sendPasswordResetEmail(email: email);
+      update();
+      Get.back();
+    } on FirebaseAuthException catch (error) {
+      String title = error.code.replaceAll(RegExp('-'), ' ');
+      String message = '';
+      if (error.code == 'user-not-found') {
+        message =
+            'No user found for that $email...create your account by signing up..';
+      } else {
+        message = error.message.toString();
+      }
+      Get.snackbar(title, message,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white);
+    } catch (error) {
+      Get.snackbar('Error!', error.toString(),
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white);
+    }
+  }
 }
