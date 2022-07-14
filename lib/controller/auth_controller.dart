@@ -7,6 +7,7 @@ class AuthController extends GetxController {
   bool isVisibility = false;
   bool isCheckBox = false;
   FirebaseAuth auth = FirebaseAuth.instance;
+  var displayUserName = '';
 
   void visibility() {
     isVisibility = !isVisibility;
@@ -23,10 +24,15 @@ class AuthController extends GetxController {
       required String email,
       required String password}) async {
     try {
-      await auth.createUserWithEmailAndPassword(
+      await auth
+          .createUserWithEmailAndPassword(
         email: email,
         password: password,
-      );
+      )
+          .then((value) {
+        displayUserName = name;
+        auth.currentUser!.updateDisplayName(name);
+      });
       update();
       Get.offNamed(AppRoutes.mainScreenRoute);
     } on FirebaseAuthException catch (error) {
