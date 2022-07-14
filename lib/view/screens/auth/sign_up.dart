@@ -19,6 +19,7 @@ class SignUpScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  final controller = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -154,12 +155,25 @@ class SignUpScreen extends StatelessWidget {
                           SizedBox(
                             height: 50,
                           ),
-                          Expanded(
-                            child: AuthButton(
-                              onPressed: () {},
-                              text: 'SIGN UP',
-                            ),
-                          ),
+                          Expanded(child: GetBuilder<AuthController>(
+                            builder: (_) {
+                              return AuthButton(
+                                onPressed: () {
+                                  if (formKey.currentState!.validate()) {
+                                    String name =
+                                        userNameController.text.trim();
+                                    String email = emailController.text.trim();
+                                    String password = passwordController.text;
+                                    controller.signUpUsingFirebase(
+                                        name: name,
+                                        password: password,
+                                        email: email);
+                                  }
+                                },
+                                text: 'SIGN UP',
+                              );
+                            },
+                          )),
                           SizedBox(
                             height: 55,
                           )
