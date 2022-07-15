@@ -176,13 +176,23 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             height: 13,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset('assets/images/facebook.png'),
-                              Image.asset('assets/images/google.png'),
-                            ],
-                          ),
+                          GetBuilder<AuthController>(builder: (_) {
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                        'assets/images/facebook.png')),
+                                InkWell(
+                                    onTap: () {
+                                      controller.googleSignUp();
+                                    },
+                                    child: Image.asset(
+                                        'assets/images/google.png')),
+                              ],
+                            );
+                          })
                         ],
                       ),
                     ),

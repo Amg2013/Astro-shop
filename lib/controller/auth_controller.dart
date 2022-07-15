@@ -1,13 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 
 class AuthController extends GetxController {
   bool isVisibility = false;
   bool isCheckBox = false;
   FirebaseAuth auth = FirebaseAuth.instance;
+  var googleSignIn = GoogleSignIn();
   var displayUserName = '';
+  var displayUserPhoto = '';
 
   void visibility() {
     isVisibility = !isVisibility;
@@ -88,7 +91,31 @@ class AuthController extends GetxController {
     }
   }
 
-  void googleSignUpApp() {}
+  void googleSignUp() async {
+    try {
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+      displayUserName = googleUser!.displayName ?? '';
+      displayUserPhoto = googleUser.photoUrl ?? '';
+      update();
+      Get.offNamed(AppRoutes.mainScreenRoute);
+    } catch (error) {
+      Get.snackbar('Error!', error.toString(),
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white,
+          titleText: Text(
+            'error',
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          messageText: Text(
+            error.toString(),
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          duration: Duration(seconds: 10));
+    }
+  }
 
   void resetPassword(String email) async {
     try {
