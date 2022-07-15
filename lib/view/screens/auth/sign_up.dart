@@ -159,7 +159,13 @@ class SignUpScreen extends StatelessWidget {
                             builder: (_) {
                               return AuthButton(
                                 onPressed: () {
-                                  if (formKey.currentState!.validate()) {
+                                  if (controller.isCheckBox == false) {
+                                    Get.snackbar('Check box',
+                                        'Please, Accept terms & conditions',
+                                        backgroundColor: Colors.green,
+                                        colorText: Colors.white,
+                                        snackPosition: SnackPosition.BOTTOM);
+                                  } else if (formKey.currentState!.validate()) {
                                     String name =
                                         userNameController.text.trim();
                                     String email = emailController.text.trim();

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:shooping_app/bindings/auth_bindings.dart';
 import 'package:shooping_app/view/screens/auth/forgot_screen.dart';
+import 'package:shooping_app/view/screens/main_screen.dart';
 
 import '../view/screens/auth/login.dart';
 import '../view/screens/auth/sign_up.dart';
@@ -11,6 +12,7 @@ class AppRoutes {
   static const signUpScreenRoute = '/signup';
   static const loginScreenRoute = '/login';
   static const forgetPasswordScreenRoute = '/forget_password';
+  static const mainScreenRoute = '/main_screen';
   static final routes = [
     GetPage(name: welcomeRoute, page: () => const WelcomeScreen()),
     GetPage(
@@ -23,6 +25,8 @@ class AppRoutes {
         binding: AuthBinding()),
     GetPage(
         name: AppRoutes.forgetPasswordScreenRoute,
-        page: () => ForgetPasswordScreen())
+        page: () => ForgetPasswordScreen(),
+        binding: AuthBinding()),
+    GetPage(name: AppRoutes.mainScreenRoute, page: () => const MainScreen()),
   ];
 }

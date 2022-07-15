@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Cairo'),
-        initialRoute: AppRoutes.welcomeRoute,
+        initialRoute: AppRoutes.loginScreenRoute,
         getPages: AppRoutes.routes);
   }
 }
