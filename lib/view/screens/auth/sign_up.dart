@@ -25,11 +25,11 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          backgroundColor: context.theme.backgroundColor,
           appBar: AppBar(
-            backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+            backgroundColor: Get.isDarkMode ? darkGreyClr : Colors.white,
             elevation: 0,
           ),
-          backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -48,7 +48,7 @@ class SignUpScreen extends StatelessWidget {
                               TextUtils(
                                   text: 'SIGN',
                                   fontSize: 35,
-                                  color: Get.isDarkMode ? mainColor : pinkClr,
+                                  color: !Get.isDarkMode ? mainColor : pinkClr,
                                   fontWeight: FontWeight.w500,
                                   underLine: TextDecoration.none),
                               SizedBox(
@@ -57,7 +57,7 @@ class SignUpScreen extends StatelessWidget {
                               TextUtils(
                                   text: 'UP',
                                   fontSize: 35,
-                                  color: Get.isDarkMode
+                                  color: !Get.isDarkMode
                                       ? Colors.black
                                       : Colors.white,
                                   fontWeight: FontWeight.w500,
@@ -78,7 +78,7 @@ class SignUpScreen extends StatelessWidget {
                             },
                             obscureText: false,
                             hintText: 'User Name',
-                            prefixIcon: Get.isDarkMode
+                            prefixIcon: !Get.isDarkMode
                                 ? Image.asset('assets/images/user.png')
                                 : Icon(
                                     Icons.person,
@@ -101,7 +101,7 @@ class SignUpScreen extends StatelessWidget {
                             },
                             obscureText: false,
                             hintText: 'Email',
-                            prefixIcon: Get.isDarkMode
+                            prefixIcon: !Get.isDarkMode
                                 ? Image.asset('assets/images/email.png')
                                 : Icon(
                                     Icons.email,
@@ -123,9 +123,9 @@ class SignUpScreen extends StatelessWidget {
                                 return null;
                               },
                               obscureText:
-                                  controller.isVisibility ? false : true,
+                              controller.isVisibility ? false : true,
                               hintText: 'Password',
-                              prefixIcon: Get.isDarkMode
+                              prefixIcon: !Get.isDarkMode
                                   ? Image.asset('assets/images/lock.png')
                                   : Icon(
                                       Icons.lock,
@@ -138,13 +138,13 @@ class SignUpScreen extends StatelessWidget {
                                 },
                                 icon: controller.isVisibility
                                     ? Icon(
-                                        Icons.visibility,
-                                        color: Colors.black,
-                                      )
+                                  Icons.visibility,
+                                  color: Colors.black,
+                                )
                                     : Icon(
-                                        Icons.visibility_off,
-                                        color: Colors.black,
-                                      ),
+                                  Icons.visibility_off,
+                                  color: Colors.black,
+                                ),
                               ),
                             );
                           }),
@@ -167,7 +167,7 @@ class SignUpScreen extends StatelessWidget {
                                         snackPosition: SnackPosition.BOTTOM);
                                   } else if (formKey.currentState!.validate()) {
                                     String name =
-                                        userNameController.text.trim();
+                                    userNameController.text.trim();
                                     String email = emailController.text.trim();
                                     String password = passwordController.text;
                                     controller.signUpUsingFirebase(

@@ -23,7 +23,7 @@ class DownContainer extends StatelessWidget {
       width: double.infinity,
       height: 100,
       decoration: BoxDecoration(
-          color: Get.isDarkMode ? mainColor : pinkClr,
+          color: !Get.isDarkMode ? mainColor : pinkClr,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(30),
             topLeft: Radius.circular(30),
