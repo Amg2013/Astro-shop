@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:shooping_app/bindings/auth_bindings.dart';
 import 'package:shooping_app/bindings/main_bindings.dart';
+import 'package:shooping_app/bindings/product_bindings.dart';
 import 'package:shooping_app/view/screens/auth/forgot_screen.dart';
 import 'package:shooping_app/view/screens/main_screen.dart';
 
@@ -30,8 +31,9 @@ class AppRoutes {
         page: () => ForgetPasswordScreen(),
         binding: AuthBinding()),
     GetPage(
-        name: AppRoutes.mainScreenRoute,
-        page: () => MainScreen(),
-        bindings: [AuthBinding(), MainBinding()]),
+      name: AppRoutes.mainScreenRoute,
+      page: () => MainScreen(),
+      bindings: [AuthBinding(), MainBinding(), ProductBinding()],
+    ),
   ];
 }
