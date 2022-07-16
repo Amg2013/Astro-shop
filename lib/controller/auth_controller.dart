@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 
@@ -11,6 +12,8 @@ class AuthController extends GetxController {
   var googleSignIn = GoogleSignIn();
   var displayUserName = '';
   var displayUserPhoto = '';
+  bool isSignUp = false;
+  final GetStorage authBox = GetStorage();
 
   void visibility() {
     isVisibility = !isVisibility;
@@ -36,6 +39,8 @@ class AuthController extends GetxController {
         displayUserName = name;
         auth.currentUser!.updateDisplayName(name);
       });
+      isSignUp = true;
+      authBox.write('isSignUp', isSignUp);
       update();
       Get.offNamed(AppRoutes.mainScreenRoute);
     } on FirebaseAuthException catch (error) {
@@ -66,6 +71,8 @@ class AuthController extends GetxController {
       await auth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((value) => displayUserName = auth.currentUser!.displayName!);
+      isSignUp = true;
+      authBox.write('isSignUp', isSignUp);
       update();
       Get.offNamed(AppRoutes.mainScreenRoute);
     } on FirebaseAuthException catch (error) {
@@ -96,6 +103,8 @@ class AuthController extends GetxController {
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
       displayUserName = googleUser!.displayName ?? '';
       displayUserPhoto = googleUser.photoUrl ?? '';
+      isSignUp = true;
+      authBox.write('isSignUp', isSignUp);
       update();
       Get.offNamed(AppRoutes.mainScreenRoute);
     } catch (error) {
@@ -135,6 +144,24 @@ class AuthController extends GetxController {
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.green,
           colorText: Colors.white);
+    } catch (error) {
+      Get.snackbar('Error!', error.toString(),
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white);
+    }
+  }
+
+  void signOutFromApp() async {
+    try {
+      await auth.signOut();
+      await googleSignIn.signOut();
+      displayUserName = '';
+      displayUserPhoto = '';
+      isSignUp = false;
+      authBox.remove('isSignUp');
+      update();
+      Get.offNamed(AppRoutes.welcomeRoute);
     } catch (error) {
       Get.snackbar('Error!', error.toString(),
           snackPosition: SnackPosition.BOTTOM,

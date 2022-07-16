@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,10 @@ class MyApp extends StatelessWidget {
         theme: ThemesApp.light,
         darkTheme: ThemesApp.dark,
         themeMode: ThemeController().getThemeMode,
-        initialRoute: AppRoutes.welcomeRoute,
+        initialRoute: FirebaseAuth.instance.currentUser != null ||
+                GetStorage().read<bool>('isSignUp') == true
+            ? AppRoutes.mainScreenRoute
+            : AppRoutes.welcomeRoute,
         getPages: AppRoutes.routes);
   }
 }
