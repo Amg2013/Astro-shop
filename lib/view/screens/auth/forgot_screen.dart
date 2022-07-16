@@ -18,13 +18,14 @@ class ForgetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: context.theme.backgroundColor,
         appBar: AppBar(
-          backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+          backgroundColor: !Get.isDarkMode ? Colors.white : darkGreyClr,
           elevation: 0,
           title: Text(
             'Forget password',
             style: TextStyle(
-                color: Get.isDarkMode ? mainColor : pinkClr,
+                color: !Get.isDarkMode ? mainColor : pinkClr,
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
           ),
@@ -35,10 +36,9 @@ class ForgetPasswordScreen extends StatelessWidget {
               },
               icon: Icon(
                 Icons.arrow_back,
-                color: Get.isDarkMode ? Colors.black : Colors.white,
+                color: !Get.isDarkMode ? Colors.black : Colors.white,
               )),
         ),
-        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
         body: Form(
           key: formKey,
           child: SingleChildScrollView(
@@ -63,7 +63,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Get.isDarkMode ? Colors.black : Colors.white,
+                      color: !Get.isDarkMode ? Colors.black : Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -88,7 +88,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     },
                     obscureText: false,
                     hintText: 'Email',
-                    prefixIcon: Get.isDarkMode
+                    prefixIcon: !Get.isDarkMode
                         ? Image.asset('assets/images/email.png')
                         : Icon(
                             Icons.email,

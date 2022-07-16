@@ -1,8 +1,10 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
+
 import '../../utils/theme.dart';
 
 class CheckWidget extends StatelessWidget {
@@ -25,7 +27,7 @@ class CheckWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.grey.shade200),
                   child: controller.isCheckBox
-                      ? Get.isDarkMode
+                      ? !Get.isDarkMode
                           ? Image.asset('assets/images/check.png')
                           : Icon(Icons.done, size: 30, color: pinkClr)
                       : Container())),
@@ -35,13 +37,13 @@ class CheckWidget extends StatelessWidget {
           TextUtils(
               text: 'I accept ',
               fontSize: 18,
-              color: Get.isDarkMode ? Colors.black : Colors.white,
+              color: !Get.isDarkMode ? Colors.black : Colors.white,
               fontWeight: FontWeight.normal,
               underLine: TextDecoration.none),
           TextUtils(
               text: 'terms & conditions',
               fontSize: 18,
-              color: Get.isDarkMode ? Colors.black : Colors.white,
+              color: !Get.isDarkMode ? Colors.black : Colors.white,
               fontWeight: FontWeight.normal,
               underLine: TextDecoration.underline),
         ],
