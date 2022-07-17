@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/utils/theme.dart';
-import 'package:shooping_app/view/widget/auth_button.dart';
+import 'package:shooping_app/view/widget/auth/auth_button.dart';
 
 import '../../../utils/my_string.dart';
-import '../../widget/auth_text_field.dart';
+import '../../widget/auth/auth_text_field.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   ForgetPasswordScreen({Key? key}) : super(key: key);
