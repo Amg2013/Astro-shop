@@ -3,6 +3,7 @@ import 'package:shooping_app/bindings/auth_bindings.dart';
 import 'package:shooping_app/bindings/main_bindings.dart';
 import 'package:shooping_app/bindings/product_bindings.dart';
 import 'package:shooping_app/view/screens/auth/forgot_screen.dart';
+import 'package:shooping_app/view/screens/cart_screen.dart';
 import 'package:shooping_app/view/screens/main_screen.dart';
 
 import '../view/screens/auth/login.dart';
@@ -15,6 +16,7 @@ class AppRoutes {
   static const loginScreenRoute = '/login';
   static const forgetPasswordScreenRoute = '/forget_password';
   static const mainScreenRoute = '/main_screen';
+  static const cartScreenRoute = '/cart_screen';
 
   static final routes = [
     GetPage(name: welcomeRoute, page: () => const WelcomeScreen()),
@@ -34,6 +36,10 @@ class AppRoutes {
       name: AppRoutes.mainScreenRoute,
       page: () => MainScreen(),
       bindings: [AuthBinding(), MainBinding(), ProductBinding()],
+    ),
+    GetPage(
+      name: AppRoutes.cartScreenRoute,
+      page: () => CartScreen(),
     ),
   ];
 }

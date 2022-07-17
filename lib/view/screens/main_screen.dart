@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/main_controller.dart';
-import 'package:shooping_app/controller/theme_controller.dart';
+import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/theme.dart';
 
 class MainScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class MainScreen extends StatelessWidget {
             actions: [
               IconButton(
                   onPressed: () {
-                    ThemeController().changeTheme();
+                    Get.toNamed(AppRoutes.cartScreenRoute);
                   },
                   icon: Image.asset('assets/images/shop.png')),
             ],

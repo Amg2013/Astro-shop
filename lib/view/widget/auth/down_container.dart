@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
 
-import '../../utils/theme.dart';
+import '../../../utils/theme.dart';
 
 class DownContainer extends StatelessWidget {
   final String text;

@@ -6,9 +6,9 @@ import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/my_string.dart';
 
 import '../../../utils/theme.dart';
-import '../../widget/auth_button.dart';
-import '../../widget/auth_text_field.dart';
-import '../../widget/down_container.dart';
+import '../../widget/auth/auth_button.dart';
+import '../../widget/auth/auth_text_field.dart';
+import '../../widget/auth/down_container.dart';
 import '../../widget/text_utils.dart';
 
 class LoginScreen extends StatelessWidget {
