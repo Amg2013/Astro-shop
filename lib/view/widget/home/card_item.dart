@@ -29,9 +29,9 @@ class CardItems extends StatelessWidget {
               itemBuilder: (context, index) {
                 return buildCardItems(
                   price: controller.productList[index].price,
-                  image: controller.productList[index].image,
-                  rate: controller.productList[index].rating.rate,
-                );
+                    image: controller.productList[index].image,
+                    rate: controller.productList[index].rating.rate,
+                    productId: controller.productList[index].id);
               }),
         );
       }
@@ -39,7 +39,10 @@ class CardItems extends StatelessWidget {
   }
 
   Widget buildCardItems(
-      {required String image, required double price, required double rate}) {
+      {required String image,
+      required double price,
+      required double rate,
+      required int productId}) {
     return Padding(
       padding: EdgeInsets.all(5),
       child: Container(
@@ -56,23 +59,32 @@ class CardItems extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.favorite_outline,
-                      color: Colors.black,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.add,
-                      color: Colors.black,
-                    ))
-              ],
-            ),
+            Obx(() {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        controller.manageFavorites(productId);
+                      },
+                      icon: controller.isFavorites(productId)
+                          ? Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            )
+                          : Icon(
+                              Icons.favorite_outline,
+                              color: Colors.black,
+                            )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.add,
+                        color: Colors.black,
+                      ))
+                ],
+              );
+            }),
             Container(
               width: double.infinity,
               height: 145,
