@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/widget/cart/cart_product.dart';
-import '../widget/cart/empty_cart.dart';
+
+import '../widget/cart/cart_total.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          backgroundColor: context.theme.backgroundColor,
+      backgroundColor: context.theme.backgroundColor,
       appBar: AppBar(
         backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
         title: const Text('Cart Items'),
@@ -33,7 +34,11 @@ class CartScreen extends StatelessWidget {
                     );
                   },
                   itemCount: 1),
-            )
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 30),
+              child: CartTotal(),
+            ),
           ],
         ),
       ),
