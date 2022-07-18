@@ -1,12 +1,17 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/controller/main_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/theme.dart';
 
+import '../../controller/cart_controller.dart';
+
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
   final mainController = Get.find<MainController>();
+  final cartController = Get.find<CartController>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +26,22 @@ class MainScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
             actions: [
-              IconButton(
-                  onPressed: () {
-                    Get.toNamed(AppRoutes.cartScreenRoute);
-                  },
-                  icon: Image.asset('assets/images/shop.png')),
+              Obx(() {
+                return Badge(
+                  position: BadgePosition.topEnd(top: 2, end: 5),
+                  animationDuration: Duration(milliseconds: 300),
+                  animationType: BadgeAnimationType.slide,
+                  badgeContent: Text(
+                    '${cartController.quantity()}',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  child: IconButton(
+                      onPressed: () {
+                        Get.toNamed(AppRoutes.cartScreenRoute);
+                      },
+                      icon: Image.asset('assets/images/shop.png')),
+                );
+              })
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
