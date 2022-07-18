@@ -39,7 +39,7 @@ class AppRoutes {
     ),
     GetPage(
       name: AppRoutes.cartScreenRoute,
-      page: () => CartScreen(),
-    ),
+        page: () => CartScreen(),
+        bindings: [AuthBinding(), ProductBinding()]),
   ];
 }
