@@ -4,6 +4,7 @@ import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/controller/product_controller.dart';
 import 'package:shooping_app/model/product_models.dart';
 import 'package:shooping_app/utils/theme.dart';
+import 'package:shooping_app/view/screens/products_details.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
 
 class CardItems extends StatelessWidget {
@@ -35,7 +36,12 @@ class CardItems extends StatelessWidget {
                     image: controller.productList[index].image,
                     rate: controller.productList[index].rating.rate,
                     productId: controller.productList[index].id,
-                    productModels: controller.productList[index]);
+                    productModels: controller.productList[index],
+                    onTap: () {
+                      Get.to(() => ProductDetailsScreen(
+                            productModels: controller.productList[index],
+                          ));
+                    });
               }),
         );
       }
@@ -47,98 +53,103 @@ class CardItems extends StatelessWidget {
       required double price,
       required double rate,
       required int productId,
-      required ProductModels productModels}) {
+      required ProductModels productModels,
+      required Function() onTap}) {
     return Padding(
       padding: EdgeInsets.all(5),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 3.0,
-              blurRadius: 5.0,
-            )
-          ],
-        ),
-        child: Column(
-          children: [
-            Obx(() {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        controller.manageFavorites(productId);
-                      },
-                      icon: controller.isFavorites(productId)
-                          ? Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            )
-                          : Icon(
-                              Icons.favorite_outline,
-                              color: Colors.black,
-                            )),
-                  IconButton(
-                      onPressed: () {
-                        cartController.addProductToCart(productModels);
-                      },
-                      icon: const Icon(
-                        Icons.shopping_cart,
-                        color: Colors.black,
-                      ))
-                ],
-              );
-            }),
-            Container(
-              width: double.infinity,
-              height: 145,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
-              child: Image.network(image),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '\$ $price',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                  Container(
-                    width: 45,
-                    height: 20,
-                    decoration: BoxDecoration(
-                        color: mainColor,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 3, right: 3),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TextUtils(
-                              fontSize: 13,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              underLine: TextDecoration.none,
-                              text: '$rate'),
-                          Icon(
-                            Icons.star_border_outlined,
-                            color: Colors.white,
-                            size: 13,
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 3.0,
+                blurRadius: 5.0,
+              )
+            ],
+          ),
+          child: Column(
+            children: [
+              Obx(() {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          controller.manageFavorites(productId);
+                        },
+                        icon: controller.isFavorites(productId)
+                            ? Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                              )
+                            : Icon(
+                                Icons.favorite_outline,
+                                color: Colors.black,
+                              )),
+                    IconButton(
+                        onPressed: () {
+                          cartController.addProductToCart(productModels);
+                        },
+                        icon: const Icon(
+                          Icons.shopping_cart,
+                          color: Colors.black,
+                        ))
+                  ],
+                );
+              }),
+              Container(
+                width: double.infinity,
+                height: 145,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Image.network(image),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '\$ $price',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      width: 45,
+                      height: 20,
+                      decoration: BoxDecoration(
+                          color: mainColor,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 3, right: 3),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextUtils(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                underLine: TextDecoration.none,
+                                text: '$rate'),
+                            Icon(
+                              Icons.star_border_outlined,
+                              color: Colors.white,
+                              size: 13,
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
