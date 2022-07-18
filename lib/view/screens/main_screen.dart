@@ -28,7 +28,8 @@ class MainScreen extends StatelessWidget {
             actions: [
               Obx(() {
                 return Badge(
-                  position: BadgePosition.topEnd(top: 2, end: 5),
+                  padding: EdgeInsets.all(5),
+                  position: BadgePosition.topEnd(top: 2, end: 3),
                   animationDuration: Duration(milliseconds: 300),
                   animationType: BadgeAnimationType.slide,
                   badgeContent: Text(
