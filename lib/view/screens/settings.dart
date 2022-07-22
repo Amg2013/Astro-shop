@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/view/widget/settings/profile_widget.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
 
 import '../../utils/theme.dart';
@@ -17,6 +18,7 @@ class SettingScreen extends StatelessWidget {
         body: ListView(
           padding: const EdgeInsets.all(24),
           children: [
+            ProfileImage(),
             const SizedBox(
               height: 10,
             ),
