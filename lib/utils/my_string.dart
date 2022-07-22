@@ -3,3 +3,4 @@ String validationEmail =
 String validationName = r"^[a-zA-Z]+$";
 
 String baseUrl = 'https://fakestoreapi.com';
+
