@@ -4,8 +4,8 @@ import 'package:shooping_app/bindings/main_bindings.dart';
 import 'package:shooping_app/bindings/product_bindings.dart';
 import 'package:shooping_app/view/screens/auth/forgot_screen.dart';
 import 'package:shooping_app/view/screens/cart_screen.dart';
+import 'package:shooping_app/view/screens/category_item.dart';
 import 'package:shooping_app/view/screens/main_screen.dart';
-import 'package:shooping_app/view/widget/category/category_item.dart';
 
 import '../view/screens/auth/login.dart';
 import '../view/screens/auth/sign_up.dart';
@@ -45,7 +45,7 @@ class AppRoutes {
         bindings: [AuthBinding(), ProductBinding()]),
     GetPage(
         name: AppRoutes.categoryItemRoute,
-        page: () => CategoryItem(),
+        page: () => CategoryItem(categoryTitle: '',),
         binding: ProductBinding())
   ];
 }
