@@ -23,27 +23,27 @@ class EmptyCart extends StatelessWidget {
           RichText(
               text: TextSpan(children: [
             TextSpan(
-                text: 'Your Cart is ',
+                text: 'Your Cart is '.tr,
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Get.isDarkMode ? Colors.white : Colors.black)),
             TextSpan(
-                text: 'Empty',
+                text: 'Empty'.tr,
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Get.isDarkMode ? pinkClr : mainColor))
           ])),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Text('Add items to get started',
+          Text('Add items to get started'.tr,
               style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: Get.isDarkMode ? Colors.white : Colors.black)),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           SizedBox(
@@ -56,7 +56,7 @@ class EmptyCart extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed(AppRoutes.mainScreenRoute);
                 },
-                child: Text('Go to Home',
+                child: Text('Go to Home'.tr,
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
