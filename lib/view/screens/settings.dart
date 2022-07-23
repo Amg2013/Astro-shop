@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/view/widget/settings/profile_widget.dart';
@@ -6,6 +5,7 @@ import 'package:shooping_app/view/widget/text_utils.dart';
 
 import '../../utils/theme.dart';
 import '../widget/settings/dark_modeWidget.dart';
+import '../widget/settings/language_widget.dart';
 import '../widget/settings/logout_widget.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -34,7 +34,7 @@ class SettingScreen extends StatelessWidget {
                 color: Get.isDarkMode ? pinkClr : mainColor,
                 fontWeight: FontWeight.bold,
                 underLine: TextDecoration.none,
-                text: 'GENERAL'),
+                text: 'GENERAL'.tr),
             const SizedBox(
               height: 20,
             ),
@@ -42,7 +42,7 @@ class SettingScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            // LanguageWidget(),
+            LanguageWidget(),
             const SizedBox(
               height: 20,
             ),

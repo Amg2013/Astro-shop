@@ -5,7 +5,10 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shooping_app/controller/theme_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
+import 'package:shooping_app/utils/my_string.dart';
 import 'package:shooping_app/utils/theme.dart';
+
+import 'language/loclization_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,10 +26,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
+        locale: Locale(GetStorage().read<String>('lang').toString()),
+        fallbackLocale: Locale(ene),
+        translations: LocalizationApp(),
         theme: ThemesApp.light,
         darkTheme: ThemesApp.dark,
         themeMode: ThemeController().getThemeMode,
-        initialRoute: AppRoutes.welcomeRoute,
+        initialRoute: AppRoutes.mainScreenRoute,
         getPages: AppRoutes.routes);
   }
 }
