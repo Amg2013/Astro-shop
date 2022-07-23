@@ -18,7 +18,7 @@ class CartScreen extends StatelessWidget {
             backgroundColor: context.theme.backgroundColor,
             appBar: AppBar(
               backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
-              title: const Text('Cart Items'),
+              title: Text('Cart Items'.tr),
               centerTitle: true,
               actions: [
                 IconButton(
@@ -48,14 +48,14 @@ class CartScreen extends StatelessWidget {
                             );
                           },
                           separatorBuilder: (context, index) {
-                            return SizedBox(
+                            return const SizedBox(
                               height: 20,
                             );
                           },
                           itemCount: cartController.productMap.length),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(bottom: 30),
+                      padding: const EdgeInsets.only(bottom: 30),
                       child: CartTotal(),
                     ),
                   ],
