@@ -117,7 +117,7 @@ class AuthController extends GetxController {
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
       displayUserName.value = googleUser!.displayName ?? '';
       displayUserPhoto.value = googleUser.photoUrl ?? '';
-      displayUserEmail.value = googleUser.email ?? '';
+      displayUserEmail.value = googleUser.email;
       GoogleSignInAuthentication googleSignInAuthentication =
           await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(

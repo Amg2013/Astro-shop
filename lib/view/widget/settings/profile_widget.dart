@@ -23,8 +23,8 @@ class ProfileImage extends StatelessWidget {
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      image: NetworkImage(
-                          authController.displayUserPhoto.value ?? ''),
+                      image:
+                          NetworkImage(authController.displayUserPhoto.value),
                       fit: BoxFit.cover)),
             ),
             const SizedBox(
