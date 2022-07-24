@@ -33,19 +33,19 @@ class CategoryWidget extends StatelessWidget {
                   width: double.infinity,
                   height: 150,
                   decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Get.isDarkMode ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
                           image: NetworkImage(
                               categoryController.imageCategory[index]),
                           fit: BoxFit.cover)),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20, bottom: 10),
+                    padding: const EdgeInsets.only(left: 20, bottom: 10),
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         categoryController.categoryNameList[index],
-                        style: TextStyle(
+                        style: const TextStyle(
                             backgroundColor: Colors.black38,
                             color: Colors.white,
                             fontSize: 22,
@@ -57,7 +57,7 @@ class CategoryWidget extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) {
-              return SizedBox(
+              return const SizedBox(
                 height: 20,
               );
             },

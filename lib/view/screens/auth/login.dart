@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                           Row(
                             children: [
                               TextUtils(
-                                  text: 'LOG',
+                                  text: 'LOG'.tr,
                                   fontSize: 35,
                                   color: !Get.isDarkMode ? mainColor : pinkClr,
                                   fontWeight: FontWeight.w500,
@@ -54,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                                 width: 10,
                               ),
                               TextUtils(
-                                  text: 'IN',
+                                  text: 'IN'.tr,
                                   fontSize: 35,
                                   color: !Get.isDarkMode
                                       ? Colors.black
@@ -71,15 +71,15 @@ class LoginScreen extends StatelessWidget {
                             validator: (value) {
                               if (!RegExp(validationEmail)
                                   .hasMatch(value ?? '')) {
-                                return 'Invalid Email';
+                                return 'Invalid Email'.tr;
                               }
                               return null;
                             },
                             obscureText: false,
-                            hintText: 'Email',
+                            hintText: 'Email'.tr,
                             prefixIcon: !Get.isDarkMode
                                 ? Image.asset('assets/images/email.png')
-                                : Icon(
+                                : const Icon(
                                     Icons.email,
                                     color: pinkClr,
                                     size: 30,
@@ -94,16 +94,16 @@ class LoginScreen extends StatelessWidget {
                               controller: passwordController,
                               validator: (value) {
                                 if (value.toString().length < 6) {
-                                  return 'write a strong password';
+                                  return 'write a strong password'.tr;
                                 }
                                 return null;
                               },
                               obscureText:
-                              controller.isVisibility ? false : true,
-                              hintText: 'Password',
+                                  controller.isVisibility ? false : true,
+                              hintText: 'Password'.tr,
                               prefixIcon: !Get.isDarkMode
                                   ? Image.asset('assets/images/lock.png')
-                                  : Icon(
+                                  : const Icon(
                                       Icons.lock,
                                       color: pinkClr,
                                       size: 30,
@@ -113,18 +113,18 @@ class LoginScreen extends StatelessWidget {
                                   controller.visibility();
                                 },
                                 icon: controller.isVisibility
-                                    ? Icon(
-                                  Icons.visibility,
-                                  color: Colors.black,
-                                )
+                                    ? const Icon(
+                                        Icons.visibility,
+                                        color: Colors.black,
+                                      )
                                     : Icon(
-                                  Icons.visibility_off,
-                                  color: Colors.black,
-                                ),
+                                        Icons.visibility_off,
+                                        color: Colors.black,
+                                      ),
                               ),
                             );
                           }),
-                          SizedBox(
+                          const SizedBox(
                             height: 12,
                           ),
                           Align(
@@ -135,7 +135,7 @@ class LoginScreen extends StatelessWidget {
                                     AppRoutes.forgetPasswordScreenRoute);
                               },
                               child: TextUtils(
-                                  text: 'Forget password?',
+                                  text: 'Forget password?'.tr,
                                   fontSize: 18,
                                   color: !Get.isDarkMode
                                       ? Colors.black
@@ -144,7 +144,7 @@ class LoginScreen extends StatelessWidget {
                                   underLine: TextDecoration.none),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 80,
                           ),
                           GetBuilder<AuthController>(
@@ -159,11 +159,11 @@ class LoginScreen extends StatelessWidget {
                                         email: email, password: password);
                                   }
                                 },
-                                text: 'LOG IN',
+                                text: 'LOG IN'.tr,
                               );
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextUtils(
@@ -172,8 +172,8 @@ class LoginScreen extends StatelessWidget {
                                   !Get.isDarkMode ? Colors.black : Colors.white,
                               fontWeight: FontWeight.bold,
                               underLine: TextDecoration.none,
-                              text: 'OR'),
-                          SizedBox(
+                              text: 'OR'.tr),
+                          const SizedBox(
                             height: 13,
                           ),
                           GetBuilder<AuthController>(builder: (_) {
@@ -199,11 +199,11 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 DownContainer(
-                    text: 'Don`t have an Account? ',
+                    text: 'Do not have an Account?'.tr,
                     onPressed: () {
                       Get.offNamed(AppRoutes.signUpScreenRoute);
                     },
-                    textType: 'Sign up')
+                    textType: 'Sign UP'.tr)
               ],
             ),
           )),

@@ -31,22 +31,22 @@ class CartController extends GetxController {
 
   void clearAllProducts() {
     Get.defaultDialog(
-        title: "Clear Products",
+        title: "Clear Products".tr,
         titleStyle: TextStyle(
           color: Get.isDarkMode ? Colors.white : Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 18,
         ),
-        middleText: 'Are you sure need to clear products ?',
+        middleText: 'Are you sure need to clear products ?'.tr,
         middleTextStyle: TextStyle(
           color: Get.isDarkMode ? Colors.white : Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 18,
         ),
         radius: 10,
-        textCancel: 'No',
+        textCancel: 'No'.tr,
         cancelTextColor: Get.isDarkMode ? Colors.white : Colors.black,
-        textConfirm: 'Yes',
+        textConfirm: 'Yes'.tr,
         confirmTextColor: Get.isDarkMode ? Colors.white : Colors.black,
         onCancel: () {
           Get.toNamed(AppRoutes.cartScreenRoute);

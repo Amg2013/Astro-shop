@@ -25,7 +25,7 @@ class CartScreen extends StatelessWidget {
                     onPressed: () {
                       cartController.clearAllProducts();
                     },
-                    icon: Icon(Icons.backspace))
+                    icon: const Icon(Icons.backspace))
               ],
             ),
             body: Obx(() {

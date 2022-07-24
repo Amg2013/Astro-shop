@@ -17,7 +17,7 @@ class EmptyCart extends StatelessWidget {
             size: 150,
             color: Get.isDarkMode ? Colors.white : Colors.black,
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           RichText(

@@ -35,13 +35,13 @@ class CheckWidget extends StatelessWidget {
             width: 13,
           ),
           TextUtils(
-              text: 'I accept ',
+              text: 'I accept '.tr,
               fontSize: 18,
               color: !Get.isDarkMode ? Colors.black : Colors.white,
               fontWeight: FontWeight.normal,
               underLine: TextDecoration.none),
           TextUtils(
-              text: 'terms & conditions',
+              text: 'terms & conditions'.tr,
               fontSize: 18,
               color: !Get.isDarkMode ? Colors.black : Colors.white,
               fontWeight: FontWeight.normal,

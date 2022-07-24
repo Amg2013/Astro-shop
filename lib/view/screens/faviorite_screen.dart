@@ -16,7 +16,7 @@ class FavoriteScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                 const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
@@ -26,7 +26,7 @@ class FavoriteScreen extends StatelessWidget {
                       'assets/images/heart.png',
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
