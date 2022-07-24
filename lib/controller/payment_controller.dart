@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
 
 class PaymentController extends GetxController {
-  final phoneNumber = 'Phone number'.tr.obs;
+  final phoneNumber = 'Phone number'.obs;
 }

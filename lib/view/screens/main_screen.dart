@@ -20,8 +20,8 @@ class MainScreen extends StatelessWidget {
         return Scaffold(
           backgroundColor: context.theme.backgroundColor,
           appBar: AppBar(
-            title:
-                Text(mainController.title[mainController.currentIndex.value]),
+            title: Text(
+                mainController.title[mainController.currentIndex.value].tr),
             centerTitle: true,
             elevation: 0,
             backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
@@ -30,11 +30,11 @@ class MainScreen extends StatelessWidget {
                 return Badge(
                   padding: EdgeInsets.all(5),
                   position: BadgePosition.topEnd(top: 2, end: 3),
-                  animationDuration: Duration(milliseconds: 300),
+                  animationDuration: const Duration(milliseconds: 300),
                   animationType: BadgeAnimationType.slide,
                   badgeContent: Text(
                     '${cartController.quantity()}',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   child: IconButton(
                       onPressed: () {

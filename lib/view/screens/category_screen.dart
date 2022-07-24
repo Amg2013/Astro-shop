@@ -12,15 +12,15 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: context.theme.backgroundColor,
       body: Padding(
-        padding: EdgeInsets.only(left: 15, top: 15),
+        padding: const EdgeInsets.only(left: 15, top: 15),
         child: Column(
           children: [
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding: EdgeInsets.only(top: 15, left: 15),
+                padding: const EdgeInsets.only(top: 15, left: 15),
                 child: TextUtils(
-                  text: 'Category',
+                  text: 'Category'.tr,
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
                   color: Get.isDarkMode ? Colors.white : Colors.black,
@@ -28,7 +28,7 @@ class CategoryScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             CategoryWidget(),

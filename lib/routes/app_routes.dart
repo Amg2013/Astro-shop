@@ -23,7 +23,10 @@ class AppRoutes {
   static const paymentScreenRoute = '/payment_screen';
 
   static final routes = [
-    GetPage(name: welcomeRoute, page: () => const WelcomeScreen()),
+    GetPage(
+        name: welcomeRoute,
+        page: () => WelcomeScreen(),
+        binding: MainBinding()),
     GetPage(
         name: signUpScreenRoute,
         page: () => SignUpScreen(),
@@ -44,7 +47,7 @@ class AppRoutes {
     GetPage(
         name: AppRoutes.cartScreenRoute,
         page: () => CartScreen(),
-        bindings: [AuthBinding(), ProductBinding()]),
+        bindings: [AuthBinding(), MainBinding(), ProductBinding()]),
     GetPage(
         name: AppRoutes.categoryItemRoute,
         page: () => CategoryItem(

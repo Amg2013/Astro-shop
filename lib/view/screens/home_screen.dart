@@ -20,10 +20,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: size.height * .24,
+              height: size.height * .26,
               decoration: BoxDecoration(
                 color: Get.isDarkMode ? darkGreyClr : mainColor,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     bottomRight: Radius.circular(20),
                     bottomLeft: Radius.circular(20)),
               ),
@@ -37,8 +37,8 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         underLine: TextDecoration.none,
-                        text: 'Find Your'),
-                    SizedBox(
+                        text: 'Find Your'.tr),
+                    const SizedBox(
                       height: 5,
                     ),
                     TextUtils(
@@ -46,8 +46,8 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         underLine: TextDecoration.none,
-                        text: 'INSPIRATION'),
-                    SizedBox(
+                        text: 'INSPIRATION'.tr),
+                    const SizedBox(
                       height: 20,
                     ),
                     SearchTextForm(),
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
@@ -67,10 +67,10 @@ class HomeScreen extends StatelessWidget {
                     color: Get.isDarkMode ? Colors.white : Colors.black,
                     fontWeight: FontWeight.w500,
                     underLine: TextDecoration.none,
-                    text: 'Categories'),
+                    text: 'Categories'.tr),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             CardItems(),

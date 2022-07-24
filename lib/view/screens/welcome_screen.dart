@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/controller/settings_controller.dart';
 
 import '../../routes/app_routes.dart';
+import '../../utils/my_string.dart';
 import '../../utils/theme.dart';
 import '../widget/text_utils.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  WelcomeScreen({Key? key}) : super(key: key);
+
+  final settingsController = Get.find<SettingsController>();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,7 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 35,
                 ),
                 Container(
@@ -41,46 +45,56 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   child: Center(
                       child: TextUtils(
-                    text: 'Welcome',
+                    text: 'Welcome'.tr,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 35,
                     underLine: TextDecoration.none,
                   )),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
-                Container(
-                    height: 60,
-                    width: 230,
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.4),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextUtils(
-                          text: 'Asroo',
-                          fontWeight: FontWeight.bold,
-                          color: mainColor,
-                          fontSize: 35,
-                          underLine: TextDecoration.none,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TextUtils(
-                          text: 'Shop',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 35,
-                          underLine: TextDecoration.none,
-                        ),
-                      ],
-                    )),
-                SizedBox(
+                GetBuilder<SettingsController>(builder: (_) {
+                  return Container(
+                      height: 60,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.4),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            settingsController.getLanguage() == ara
+                                ? 'Shop'.tr
+                                : 'Asroo'.tr,
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                                color: settingsController.getLanguage() == ara
+                                    ? Colors.white
+                                    : mainColor),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            settingsController.getLanguage() == ara
+                                ? 'Asroo'.tr
+                                : 'Shop'.tr,
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                                color: settingsController.getLanguage() == ara
+                                    ? mainColor
+                                    : Colors.white),
+                          ),
+                        ],
+                      ));
+                }),
+                const SizedBox(
                   height: 250,
                 ),
                 ElevatedButton(
@@ -95,7 +109,7 @@ class WelcomeScreen extends StatelessWidget {
                       Get.offAllNamed(AppRoutes.loginScreenRoute);
                     },
                     child: TextUtils(
-                      text: 'Get Start',
+                      text: 'Get Start'.tr,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 22,
@@ -108,7 +122,7 @@ class WelcomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextUtils(
-                      text: 'Do not have an Account?',
+                      text: 'Do not have an Account?'.tr,
                       fontSize: 18,
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
@@ -119,7 +133,7 @@ class WelcomeScreen extends StatelessWidget {
                           Get.offNamed(AppRoutes.signUpScreenRoute);
                         },
                         child: TextUtils(
-                          text: 'Sign Up',
+                          text: 'Sign Up'.tr,
                           fontWeight: FontWeight.normal,
                           fontSize: 18,
                           color: Colors.white,
