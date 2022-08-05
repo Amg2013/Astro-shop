@@ -180,10 +180,12 @@ class LoginScreen extends StatelessWidget {
                             return Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
+                                /*
                                 InkWell(
                                     onTap: () {},
                                     child: Image.asset(
                                         'assets/images/facebook.png')),
+                                 */
                                 InkWell(
                                     onTap: () {
                                       controller.googleSignUp();

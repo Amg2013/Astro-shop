@@ -60,5 +60,9 @@ const Map<String, String> fr = {
   'IN': ' ',
   "Forget password?": "Mot de passe oublié?",
   'OR': 'OU',
-  'LOG IN': "Connexion"
+  'LOG IN': "Connexion",
+  'If you want to recover your account, then please provide your email ID blew..':
+      "Si vous souhaitez récupérer votre compte, veuillez fournir votre identifiant de messagerie soufflé..",
+  "SEND": "ENVOYER",
+  'Forget password': 'Mot de passe oublié'
 };

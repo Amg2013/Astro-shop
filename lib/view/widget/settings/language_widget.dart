@@ -41,8 +41,8 @@ class LanguageWidget extends StatelessWidget {
                     value: ene,
                     child: Text(
                       english.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 16),
                     ),
                   ),
                   DropdownMenuItem(
@@ -57,8 +57,8 @@ class LanguageWidget extends StatelessWidget {
                     value: fra,
                     child: Text(
                       france.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 16),
                     ),
                   ),
                 ],

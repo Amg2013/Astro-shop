@@ -15,41 +15,34 @@ class ProfileImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image:
-                          NetworkImage(authController.displayUserPhoto.value),
-                      fit: BoxFit.cover)),
-            ),
-            const SizedBox(
-              width: 15,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextUtils(
-                    fontSize: 22,
-                    color: Get.isDarkMode ? Colors.white : Colors.black,
-                    fontWeight: FontWeight.bold,
-                    underLine: TextDecoration.none,
-                    text: settingsController
-                        .capitalize(authController.displayUserName.value)),
-                TextUtils(
-                    fontSize: 14,
-                    color: Get.isDarkMode ? Colors.white : Colors.black,
-                    fontWeight: FontWeight.bold,
-                    underLine: TextDecoration.none,
-                    text: authController.displayUserEmail.value),
-              ],
-            )
-          ],
-        )
+        Container(
+          height: 100,
+          width: 100,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                  image: NetworkImage(authController.displayUserPhoto.value),
+                  fit: BoxFit.cover)),
+        ),
+        const SizedBox(
+          width: 15,
+        ),
+        TextUtils(
+            fontSize: 22,
+            color: Get.isDarkMode ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+            underLine: TextDecoration.none,
+            text: settingsController
+                .capitalize(authController.displayUserName.value)),
+        const SizedBox(
+          width: 15,
+        ),
+        TextUtils(
+            fontSize: 14,
+            color: Get.isDarkMode ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+            underLine: TextDecoration.none,
+            text: authController.displayUserEmail.value)
       ],
     );
   }

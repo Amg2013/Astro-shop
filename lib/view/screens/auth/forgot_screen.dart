@@ -23,7 +23,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           backgroundColor: !Get.isDarkMode ? Colors.white : darkGreyClr,
           elevation: 0,
           title: Text(
-            'Forget password',
+            'Forget password'.tr,
             style: TextStyle(
                 color: !Get.isDarkMode ? mainColor : pinkClr,
                 fontSize: 20,
@@ -59,7 +59,8 @@ class ForgetPasswordScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'If you want to recover your account, then please provide your email ID blew..',
+                    'If you want to recover your account, then please provide your email ID blew..'
+                        .tr,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -82,22 +83,22 @@ class ForgetPasswordScreen extends StatelessWidget {
                     controller: emailController,
                     validator: (value) {
                       if (!RegExp(validationEmail).hasMatch(value ?? '')) {
-                        return 'Invalid Email';
+                        return 'Invalid Email'.tr;
                       }
                       return null;
                     },
                     obscureText: false,
-                    hintText: 'Email',
+                    hintText: 'Email'.tr,
                     prefixIcon: !Get.isDarkMode
                         ? Image.asset('assets/images/email.png')
-                        : Icon(
+                        : const Icon(
                             Icons.email,
                             color: pinkClr,
                             size: 30,
                           ),
-                    suffixIcon: Text(''),
+                    suffixIcon: const Text(''),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   GetBuilder<AuthController>(builder: (_) {
@@ -108,7 +109,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                             controller.resetPassword(email);
                           }
                         },
-                        text: 'SEND');
+                        text: 'SEND'.tr);
                   })
                 ],
               ),

@@ -147,11 +147,10 @@ class AuthController extends GetxController {
     }
   }
 
-  void resetPassword(String email) async {
+  Future<void> resetPassword(String email) async {
     try {
       await auth.sendPasswordResetEmail(email: email);
       update();
-      Get.back();
     } on FirebaseAuthException catch (error) {
       String title = error.code.replaceAll(RegExp('-'), ' ');
       String message = '';

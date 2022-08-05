@@ -25,7 +25,7 @@ const Map<String, String> ar = {
   'Category': 'القسم',
   'Favorite': 'المفضل',
   'Settings': 'إعدادات',
-  'Find Your': 'ابحث عن طلبك',
+  'Find Your': 'ابحث عن',
   'INSPIRATION': 'طلبك',
   'Search with name & price': 'البحث بالاسم و السعر',
   'Categories': 'كل الاصناف',
@@ -58,5 +58,9 @@ const Map<String, String> ar = {
   'IN': 'الدخول',
   'Forget password?': 'نسيت كلمة السر؟',
   'OR': 'أو',
-  'LOG IN': "تسجيل الدخول"
+  'LOG IN': "تسجيل الدخول",
+  'If you want to recover your account, then please provide your email ID blew..':
+      "إذا كنت ترغب في استعادة حسابك ، فيرجى تقديم معرف البريد الإلكتروني الخاص بك ..",
+  "SEND": "إرسال",
+  'Forget password': 'نسيت كلمة المرور'
 };

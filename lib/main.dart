@@ -31,7 +31,9 @@ class MyApp extends StatelessWidget {
         theme: ThemesApp.light,
         darkTheme: ThemesApp.dark,
         themeMode: ThemeController().getThemeMode,
-        initialRoute: AppRoutes.loginScreenRoute,
+        initialRoute: GetStorage().read('isSignUp')
+            ? AppRoutes.mainScreenRoute
+            : AppRoutes.welcomeRoute,
         getPages: AppRoutes.routes);
   }
 }

@@ -6,6 +6,8 @@ import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/widget/payment/phone_text_field.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
 
+import '../../../controller/auth_controller.dart';
+
 class DeliveryContainerWidget extends StatefulWidget {
   const DeliveryContainerWidget({Key? key}) : super(key: key);
 
@@ -19,6 +21,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
   bool changeColor = false;
   TextEditingController phoneTextEditingController = TextEditingController();
   final paymentController = Get.find<PaymentController>();
+  final authController = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,14 +49,16 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
                 color: changeColor ? Colors.grey.shade300 : Colors.white,
                 value: 2,
                 onChanged: (int? value) {
-                  radioContainerIndex = value!;
-                  changeColor = !changeColor;
-                  setState(() {});
+                  setState(() {
+                    radioContainerIndex = value!;
+                    changeColor = !changeColor;
+                  });
+                  paymentController.updatePosition();
                 },
                 title: 'Delivery',
-                name: 'shehab adel',
+                name: authController.displayUserName.value,
                 phone: paymentController.phoneNumber.value.tr,
-                address: 'beniseuf/Bba/telcafmanseour',
+                address: paymentController.address.value,
                 icon: InkWell(
                   onTap: () {
                     Get.defaultDialog(

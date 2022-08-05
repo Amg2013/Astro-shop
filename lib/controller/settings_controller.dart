@@ -33,7 +33,7 @@ class SettingsController extends GetxController {
   }
 
   String getLanguage() {
-    return storage.read('lang');
+    return storage.read('lang') ?? ene;
   }
 
   void saveLanguage(String lang) async {

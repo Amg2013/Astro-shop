@@ -60,4 +60,8 @@ const Map<String, String> en = {
   'Forget password?': 'Forget password?',
   'OR': 'OR',
   'LOG IN': 'LOG IN',
+  'If you want to recover your account, then please provide your email ID blew..':
+      'If you want to recover your account, then please provide your email ID blew..',
+  'SEND': "SEND",
+  'Forget password': 'Forget password',
 };
