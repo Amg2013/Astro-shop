@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
@@ -11,9 +12,14 @@ import 'package:shooping_app/view/widget/settings/language/loclization_app.dart'
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.removeAfter(initialization);
   await Firebase.initializeApp();
   await GetStorage.init();
   runApp(const MyApp());
+}
+
+Future initialization(BuildContext? context) async {
+  await Future.delayed(Duration(seconds: 1));
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +37,7 @@ class MyApp extends StatelessWidget {
         theme: ThemesApp.light,
         darkTheme: ThemesApp.dark,
         themeMode: ThemeController().getThemeMode,
-        initialRoute: GetStorage().read('isSignUp')
+        initialRoute: GetStorage().read('isSignUp') == true
             ? AppRoutes.mainScreenRoute
             : AppRoutes.welcomeRoute,
         getPages: AppRoutes.routes);

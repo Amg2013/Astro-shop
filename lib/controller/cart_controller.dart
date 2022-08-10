@@ -21,7 +21,7 @@ class CartController extends GetxController {
         productMap[productModels] == 1) {
       productMap.removeWhere((key, value) => key == productModels);
     } else {
-      productMap[productModels] -= 1;
+      productMap[ProductModels] -= 1;
     }
   }
 

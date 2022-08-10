@@ -39,7 +39,8 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
                 title: 'Asroo shop',
                 name: 'Assro Store',
                 phone: '07-289-35',
-                address: 'beniseuf/Bba/telcafmanseour',
+                countryAddress: 'Egypt',
+                streetAddress: 'Cairo/alharum',
                 icon: Container()),
             const SizedBox(
               height: 10,
@@ -58,7 +59,8 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
                 title: 'Delivery',
                 name: authController.displayUserName.value,
                 phone: paymentController.phoneNumber.value.tr,
-                address: paymentController.address.value,
+                countryAddress: paymentController.countryAddress.value,
+                streetAddress: paymentController.streetAddress.value,
                 icon: InkWell(
                   onTap: () {
                     Get.defaultDialog(
@@ -105,12 +107,13 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
       required String title,
       required String name,
       required String phone,
-      required String address,
+      required String countryAddress,
+      required String streetAddress,
       required Widget icon,
       required BuildContext context}) {
     return Container(
       width: double.infinity,
-      height: 120,
+      height: 130,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: color,
@@ -135,64 +138,61 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
             width: 10,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextUtils(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    underLine: TextDecoration.none,
-                    text: title),
-                const SizedBox(
-                  width: 5,
+            padding: const EdgeInsets.only(top: 10),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              TextUtils(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  underLine: TextDecoration.none,
+                  text: title),
+              TextUtils(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  underLine: TextDecoration.none,
+                  text: name),
+              Row(
+                children: [
+                  TextUtils(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      underLine: TextDecoration.none,
+                      text: 'Egypt +2'),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  TextUtils(
+                      fontSize: 12,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal,
+                      underLine: TextDecoration.none,
+                      text: phone),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * .13,
+                  ),
+                  SizedBox(
+                    child: icon,
+                  ),
+                ],
+              ),
+              Text(
+                countryAddress,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 11,
                 ),
-                TextUtils(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    underLine: TextDecoration.none,
-                    text: name),
-                const SizedBox(
-                  width: 5,
+              ),
+              Text(
+                streetAddress,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 11,
                 ),
-                Row(
-                  children: [
-                    TextUtils(
-                        fontSize: 16,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        underLine: TextDecoration.none,
-                        text: 'Egypt +2'),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    TextUtils(
-                        fontSize: 15,
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        underLine: TextDecoration.none,
-                        text: phone),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * .13,
-                    ),
-                    SizedBox(
-                      child: icon,
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                TextUtils(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    underLine: TextDecoration.none,
-                    text: address),
-              ],
-            ),
+              )
+            ]),
           )
         ],
       ),

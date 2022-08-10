@@ -26,23 +26,21 @@ class MainScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
             actions: [
-              Obx(() {
-                return Badge(
-                  padding: EdgeInsets.all(5),
-                  position: BadgePosition.topEnd(top: 2, end: 3),
-                  animationDuration: const Duration(milliseconds: 300),
-                  animationType: BadgeAnimationType.slide,
-                  badgeContent: Text(
-                    '${cartController.quantity()}',
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  child: IconButton(
-                      onPressed: () {
-                        Get.toNamed(AppRoutes.cartScreenRoute);
-                      },
-                      icon: Image.asset('assets/images/shop.png')),
-                );
-              })
+              Badge(
+                padding: const EdgeInsets.all(5),
+                position: BadgePosition.topEnd(top: 2, end: 3),
+                animationDuration: const Duration(milliseconds: 300),
+                animationType: BadgeAnimationType.slide,
+                badgeContent: Text(
+                  '${cartController.quantity()}',
+                  style: const TextStyle(color: Colors.white),
+                ),
+                child: IconButton(
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.cartScreenRoute);
+                    },
+                    icon: Image.asset('assets/images/shop.png')),
+              )
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -97,7 +95,7 @@ class MainScreen extends StatelessWidget {
           ),
           body: IndexedStack(
             index: mainController.currentIndex.value,
-            children: mainController.item.value,
+            children: mainController.item,
           ),
         );
       },

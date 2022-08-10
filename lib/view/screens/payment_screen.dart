@@ -21,7 +21,7 @@ class PaymentScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +35,7 @@ class PaymentScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              DeliveryContainerWidget(),
+              const DeliveryContainerWidget(),
               const SizedBox(
                 height: 20,
               ),

@@ -77,7 +77,7 @@ class CardItems extends StatelessWidget {
       required ProductModels productModels,
       required Function() onTap}) {
     return Padding(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       child: InkWell(
         onTap: onTap,
         child: Container(
@@ -103,11 +103,11 @@ class CardItems extends StatelessWidget {
                           controller.manageFavorites(productId);
                         },
                         icon: controller.isFavorites(productId)
-                            ? Icon(
+                            ? const Icon(
                                 Icons.favorite,
                                 color: Colors.red,
                               )
-                            : Icon(
+                            : const Icon(
                                 Icons.favorite_outline,
                                 color: Colors.black,
                               )),
@@ -137,7 +137,7 @@ class CardItems extends StatelessWidget {
                   children: [
                     Text(
                       '\$ $price',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     Container(
@@ -147,7 +147,7 @@ class CardItems extends StatelessWidget {
                           color: mainColor,
                           borderRadius: BorderRadius.circular(10)),
                       child: Padding(
-                        padding: EdgeInsets.only(left: 3, right: 3),
+                        padding: const EdgeInsets.only(left: 3, right: 3),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -157,7 +157,7 @@ class CardItems extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 underLine: TextDecoration.none,
                                 text: '$rate'),
-                            Icon(
+                            const Icon(
                               Icons.star_border_outlined,
                               color: Colors.white,
                               size: 13,

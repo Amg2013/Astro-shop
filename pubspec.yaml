@@ -44,7 +44,7 @@ dependencies:
   geolocator: ^9.0.1
   geocoding: ^2.0.4
   flutter_braintree: ^2.3.1
-
+  square_in_app_payments: ^1.7.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -52,6 +52,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.2.7
+
+flutter_native_splash:
+  background_image: assets/images/Splash.png
+  android: false
+  ios: false
+  web: false
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

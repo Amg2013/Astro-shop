@@ -30,7 +30,7 @@ class CartScreen extends StatelessWidget {
             ),
             body: Obx(() {
               if (cartController.productMap.isEmpty) {
-                return EmptyCart();
+                return const EmptyCart();
               }
               return SingleChildScrollView(
                 child: Column(

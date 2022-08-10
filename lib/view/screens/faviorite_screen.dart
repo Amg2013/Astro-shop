@@ -48,7 +48,7 @@ class FavoriteScreen extends StatelessWidget {
                     productId: controller.favoriteList[index].id ?? '');
               },
               separatorBuilder: (context, index) {
-                return Divider(
+                return const Divider(
                   color: Colors.grey,
                   thickness: 1,
                 );

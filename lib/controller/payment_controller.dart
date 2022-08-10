@@ -1,12 +1,14 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:square_in_app_payments/in_app_payments.dart';
 
 class PaymentController extends GetxController {
   final phoneNumber = 'Phone number'.obs;
   var latitude = ''.obs;
   var longitude = ''.obs;
-  var address = 'Your address'.obs;
+  final countryAddress = 'Your address'.obs;
+  final streetAddress = ''.obs;
 
   //location
 
@@ -15,7 +17,8 @@ class PaymentController extends GetxController {
     List<Placemark> placeMarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
     Placemark place = placeMarks[0];
-    address.value = "${place.country} ${place.street}";
+    countryAddress.value = "${place.country}";
+    streetAddress.value = "${place.street}";
   }
 
   Future<Position> _determinePosition() async {
@@ -40,5 +43,12 @@ class PaymentController extends GetxController {
           'Location permissions are permanently denied, we cannot request permissions.');
     }
     return await Geolocator.getCurrentPosition();
+  }
+
+  //Paypal sandbox payment
+
+  Future<void> initSquarePayment() async {
+    await InAppPayments.setSquareApplicationId(
+        'sandbox-sq0idb-kw1AP4SAqjucwSR4PWYG-g');
   }
 }

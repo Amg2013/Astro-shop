@@ -42,7 +42,7 @@ class ProductController extends GetxController {
 
   void manageFavorites(int productId) async {
     int index = favoriteList.indexWhere((element) => element.id == productId);
-    if (index >= 0) {
+    if (favoriteList.any((element) => element.id == productId)) {
       favoriteList.removeAt(index);
       await boxStorage.remove('isFavoritesList');
     } else {

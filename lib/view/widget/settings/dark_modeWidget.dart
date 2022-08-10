@@ -25,7 +25,7 @@ class DarkModeWidget extends StatelessWidget {
               settingsController.switchValue.value = value;
             },
             activeTrackColor: Get.isDarkMode ? pinkClr : mainColor,
-            activeColor: Get.isDarkMode ? pinkClr : mainColor,
+            activeColor: Get.isDarkMode ? pinkClr : pinkClr,
           )
         ],
       );

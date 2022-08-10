@@ -22,7 +22,7 @@ class CartProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 20, right: 20, top: 5),
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 5),
       height: 130,
       width: 100,
       decoration: BoxDecoration(
@@ -33,7 +33,7 @@ class CartProductCard extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            margin: EdgeInsets.only(left: 15),
+            margin: const EdgeInsets.only(left: 15),
             height: 120,
             width: 100,
             decoration: BoxDecoration(
@@ -43,7 +43,7 @@ class CartProductCard extends StatelessWidget {
                     image: NetworkImage('${productModels.image}'),
                     fit: BoxFit.cover)),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Expanded(
@@ -60,7 +60,7 @@ class CartProductCard extends StatelessWidget {
                       fontSize: 16,
                       color: Get.isDarkMode ? Colors.white : Colors.black),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Text(

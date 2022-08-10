@@ -8,7 +8,12 @@ import '../view/screens/settings.dart';
 class MainController extends GetxController {
   RxInt currentIndex = 0.obs;
 
-  final item = [HomeScreen(), CategoryScreen(), FavoriteScreen(), SettingScreen()].obs;
+  final item = [
+    HomeScreen(),
+    const CategoryScreen(),
+    FavoriteScreen(),
+    const SettingScreen()
+  ].obs;
 
   final title = ['Asroo Shop', 'Category', 'Favorite', 'Settings'].obs;
 }
