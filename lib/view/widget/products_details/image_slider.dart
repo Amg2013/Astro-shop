@@ -1,6 +1,5 @@
 import 'package:badges/badges.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/cart_controller.dart';
@@ -9,9 +8,13 @@ import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/widget/products_details/color_picker.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ImageSlider extends StatefulWidget {
-  ImageSlider({Key? key, required this.imageUrl}) : super(key: key);
+import '../category/ExampleInstagramFilterSelection.dart';
 
+class ImageSlider extends StatefulWidget {
+  ImageSlider({
+    Key? key,
+    required this.imageUrl,
+  }) : super(key: key);
   String imageUrl;
 
   @override
@@ -19,8 +22,6 @@ class ImageSlider extends StatefulWidget {
 }
 
 class _ImageSliderState extends State<ImageSlider> {
-  CarouselController carouselController = CarouselController();
-
   int currentPage = 0;
   int currentColor = 0;
   final cartController = Get.find<CartController>();
@@ -31,6 +32,7 @@ class _ImageSliderState extends State<ImageSlider> {
     kCOlor4,
     kCOlor5,
   ];
+  CarouselController carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +45,10 @@ class _ImageSliderState extends State<ImageSlider> {
               return Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        widget.imageUrl,
-                      ),
-                      fit: BoxFit.fill,
-                    ),
-                    borderRadius: BorderRadius.circular(25)),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child:
+                    ExampleInstagramFilterSelection(imageUrl: widget.imageUrl),
               );
             },
             options: CarouselOptions(
@@ -75,6 +74,7 @@ class _ImageSliderState extends State<ImageSlider> {
                   activeDotColor: Get.isDarkMode ? pinkClr : mainColor,
                   dotColor: Colors.black),
             )),
+        /*
         Positioned(
             bottom: 30,
             right: 30,
@@ -104,6 +104,7 @@ class _ImageSliderState extends State<ImageSlider> {
                   },
                   itemCount: colorSelectedList.length),
             )),
+            */
         Container(
           padding: EdgeInsets.only(top: 20, left: 25, right: 25),
           child: Row(

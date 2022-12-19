@@ -113,7 +113,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
       required BuildContext context}) {
     return Container(
       width: double.infinity,
-      height: 130,
+      height: MediaQuery.of(context).size.height * .2,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: color,
@@ -178,20 +178,37 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
                   ),
                 ],
               ),
-              Text(
-                countryAddress,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 11,
-                ),
+              SizedBox(
+                height: 5,
               ),
-              Text(
-                streetAddress,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 11,
-                ),
-              )
+              Wrap(
+                direction: Axis.vertical,
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    child: Text(
+                      countryAddress,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 11,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width * .1,
+                    width: MediaQuery.of(context).size.width * .7,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Text(
+                        streetAddress,
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ]),
           )
         ],

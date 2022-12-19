@@ -63,7 +63,7 @@ class CardItems extends StatelessWidget {
                                 productModels: controller.searchList[index],
                               ));
                         });
-              }),
+                  }),
         );
       }
     });

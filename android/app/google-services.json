@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "878168982806-qlq66l7hcvn2ac8fe4lr0nbtopnba8h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shehab.shooping_app",
+            "certificate_hash": "846f63776ddaa314df9ab9dc05127cc86cf6d660"
+          }
+        },
+        {
           "client_id": "878168982806-42i8a94dburcubne67b8jobp657utts2.apps.googleusercontent.com",
           "client_type": 3
         }
