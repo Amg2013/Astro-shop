@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/category_controller.dart';
 import 'package:shooping_app/utils/theme.dart';
-
 import '../../controller/cart_controller.dart';
 import '../../controller/product_controller.dart';
 import '../../model/product_models.dart';
@@ -20,7 +19,7 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: context.theme.backgroundColor,
+        backgroundColor: context.theme.colorScheme.background,
         appBar: AppBar(
           title: Text(categoryTitle),
           centerTitle: true,

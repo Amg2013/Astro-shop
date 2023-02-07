@@ -7,7 +7,6 @@ import 'package:shooping_app/view/screens/cart_screen.dart';
 import 'package:shooping_app/view/screens/category_item.dart';
 import 'package:shooping_app/view/screens/main_screen.dart';
 import 'package:shooping_app/view/screens/payment_screen.dart';
-
 import '../view/screens/auth/login.dart';
 import '../view/screens/auth/sign_up.dart';
 import '../view/screens/welcome_screen.dart';

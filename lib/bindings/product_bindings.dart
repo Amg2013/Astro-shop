@@ -6,7 +6,6 @@ import 'package:shooping_app/controller/product_controller.dart';
 class ProductBinding extends Bindings {
   @override
   void dependencies() {
-    // TODO: implement dependencies
     Get.put(ProductController());
     Get.lazyPut(() => CartController());
     Get.put(CategoryController());

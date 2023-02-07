@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/settings_controller.dart';
-
 import '../../routes/app_routes.dart';
 import '../../utils/my_string.dart';
 import '../../utils/theme.dart';
@@ -99,8 +98,8 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: mainColor,
-                        onPrimary: Colors.red,
+                        foregroundColor: Colors.red,
+                        backgroundColor: mainColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         padding: const EdgeInsets.symmetric(

@@ -51,8 +51,8 @@ class EmptyCart extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
-                    elevation: 0,
-                    primary: Get.isDarkMode ? pinkClr : mainColor),
+                    backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
+                    elevation: 0),
                 onPressed: () {
                   Get.toNamed(AppRoutes.mainScreenRoute);
                 },

@@ -1,12 +1,10 @@
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/controller/main_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/theme.dart';
-
-import '../../controller/cart_controller.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -18,7 +16,7 @@ class MainScreen extends StatelessWidget {
     return SafeArea(child: Obx(
       () {
         return Scaffold(
-          backgroundColor: context.theme.backgroundColor,
+          backgroundColor: context.theme.colorScheme.background,
           appBar: AppBar(
             title: Text(
                 mainController.title[mainController.currentIndex.value].tr),
@@ -26,11 +24,11 @@ class MainScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
             actions: [
-              Badge(
+              badge.Badge(
                 padding: const EdgeInsets.all(5),
-                position: BadgePosition.topEnd(top: 2, end: 3),
+                position: badge.BadgePosition.topEnd(top: 2, end: 3),
                 animationDuration: const Duration(milliseconds: 300),
-                animationType: BadgeAnimationType.slide,
+                animationType: badge.BadgeAnimationType.slide,
                 badgeContent: Text(
                   '${cartController.quantity()}',
                   style: const TextStyle(color: Colors.white),

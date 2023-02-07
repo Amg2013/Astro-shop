@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
-
 import '../../../utils/theme.dart';
 
 class CheckWidget extends StatelessWidget {

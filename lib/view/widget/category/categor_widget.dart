@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/screens/category_item.dart';
-
 import '../../../controller/category_controller.dart';
 
 class CategoryWidget extends StatelessWidget {

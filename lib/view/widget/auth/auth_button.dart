@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
-
 import '../../../utils/theme.dart';
 
 class AuthButton extends StatelessWidget {
@@ -16,7 +15,7 @@ class AuthButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-          primary: !Get.isDarkMode ? mainColor : pinkClr,
+          backgroundColor: !Get.isDarkMode ? mainColor : pinkClr,
           minimumSize: const Size(300, 50),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),

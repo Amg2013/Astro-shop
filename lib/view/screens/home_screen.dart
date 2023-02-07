@@ -6,6 +6,7 @@ import 'package:shooping_app/view/widget/text_utils.dart';
 
 import '../widget/home/card_item.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   late Size size;
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: context.theme.backgroundColor,
+      backgroundColor: context.theme.colorScheme.background,
       body: Column(
         children: [
           Container(

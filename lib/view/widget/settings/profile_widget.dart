@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/settings_controller.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
-
 import '../../../controller/auth_controller.dart';
 
 class ProfileImage extends StatelessWidget {

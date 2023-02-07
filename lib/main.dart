@@ -12,6 +12,7 @@ import 'package:shooping_app/view/widget/settings/language/loclization_app.dart'
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // ignore: deprecated_member_use
   FlutterNativeSplash.removeAfter(initialization);
   await Firebase.initializeApp();
   await GetStorage.init();

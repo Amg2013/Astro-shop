@@ -16,7 +16,6 @@ class CartProductCard extends StatelessWidget {
   final int index;
   final ProductModels productModels;
   final cartController = Get.find<CartController>();
-
   final int quantity;
 
   @override

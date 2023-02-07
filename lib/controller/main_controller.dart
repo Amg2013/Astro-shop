@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:shooping_app/view/screens/category_screen.dart';
 import 'package:shooping_app/view/screens/faviorite_screen.dart';
-
 import '../view/screens/home_screen.dart';
 import '../view/screens/settings.dart';
 

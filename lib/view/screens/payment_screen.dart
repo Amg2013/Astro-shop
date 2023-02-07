@@ -12,7 +12,7 @@ class PaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.theme.backgroundColor,
+      backgroundColor: context.theme.colorScheme.background,
       appBar: AppBar(
         title: Text('Payment'.tr),
         elevation: 0,
@@ -72,8 +72,8 @@ class PaymentScreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        elevation: 0,
-                        primary: Get.isDarkMode ? pinkClr : mainColor),
+                        backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
+                        elevation: 0),
                     onPressed: () {},
                     child: Text(
                       'Pay Now'.tr,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/view/widget/settings/profile_widget.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
-
 import '../../utils/theme.dart';
 import '../widget/settings/dark_modeWidget.dart';
 import '../widget/settings/language_widget.dart';
@@ -14,7 +13,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: context.theme.backgroundColor,
+        backgroundColor: context.theme.colorScheme.background,
         body: ListView(
           padding: const EdgeInsets.all(24),
           children: [

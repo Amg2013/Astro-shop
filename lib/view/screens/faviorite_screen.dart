@@ -9,14 +9,14 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: context.theme.backgroundColor,
+        backgroundColor: context.theme.colorScheme.background,
         body: Obx(() {
           if (controller.favoriteList.isEmpty) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                 const SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   SizedBox(

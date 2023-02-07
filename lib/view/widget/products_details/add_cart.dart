@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/model/product_models.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
-
 import '../../../utils/theme.dart';
 
 class AddCart extends StatelessWidget {
@@ -50,8 +49,8 @@ class AddCart extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
-                      elevation: 0,
-                      primary: Get.isDarkMode ? pinkClr : mainColor),
+                      backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
+                      elevation: 0),
                   onPressed: () {
                     cartController.addProductToCart(productModels);
                   },

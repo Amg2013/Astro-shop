@@ -1,15 +1,14 @@
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badge;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
 import 'package:shooping_app/utils/theme.dart';
-import 'package:shooping_app/view/widget/products_details/color_picker.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../category/ExampleInstagramFilterSelection.dart';
 
+// ignore: must_be_immutable
 class ImageSlider extends StatefulWidget {
   ImageSlider({
     Key? key,
@@ -143,11 +142,12 @@ class _ImageSliderState extends State<ImageSlider> {
                             : mainColor.withOpacity(0.8),
                         shape: BoxShape.circle),
                     child: Obx(() {
-                      return Badge(
+                      return badge.Badge(
                         padding: EdgeInsets.all(5),
-                        position: BadgePosition.topEnd(top: -10, end: -10),
+                        position:
+                            badge.BadgePosition.topEnd(top: -10, end: -10),
                         animationDuration: Duration(milliseconds: 300),
-                        animationType: BadgeAnimationType.slide,
+                        animationType: badge.BadgeAnimationType.slide,
                         badgeContent: Text(
                           '${cartController.quantity()}',
                           style: TextStyle(color: Colors.white),

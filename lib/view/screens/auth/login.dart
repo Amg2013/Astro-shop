@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: context.theme.backgroundColor,
+          backgroundColor: context.theme.colorScheme.background,
           appBar: AppBar(
             backgroundColor: !Get.isDarkMode ? Colors.white : darkGreyClr,
             elevation: 0,

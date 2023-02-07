@@ -4,7 +4,6 @@ import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/widget/cart/cart_product.dart';
 import 'package:shooping_app/view/widget/cart/empty_cart.dart';
-
 import '../widget/cart/cart_total.dart';
 
 class CartScreen extends StatelessWidget {
@@ -15,7 +14,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: context.theme.backgroundColor,
+            backgroundColor: context.theme.colorScheme.background,
             appBar: AppBar(
               backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
               title: Text('Cart Items'.tr),

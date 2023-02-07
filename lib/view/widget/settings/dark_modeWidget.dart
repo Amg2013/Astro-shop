@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:shooping_app/controller/theme_controller.dart';
 import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
-
 import '../../../controller/settings_controller.dart';
 
 class DarkModeWidget extends StatelessWidget {

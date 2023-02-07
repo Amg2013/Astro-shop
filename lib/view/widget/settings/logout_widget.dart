@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
-
 import '../../../utils/theme.dart';
 import '../text_utils.dart';
 

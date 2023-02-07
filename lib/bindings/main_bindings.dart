@@ -6,7 +6,6 @@ import 'package:shooping_app/controller/settings_controller.dart';
 class MainBinding extends Bindings {
   @override
   void dependencies() {
-    // TODO: implement dependencies
     Get.put(MainController());
     Get.put(SettingsController(), permanent: true);
     Get.put(PaymentController(), permanent: true);
