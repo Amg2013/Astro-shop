@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_cast
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
