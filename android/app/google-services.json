@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "878168982806",
+    "project_id": "assro-shop",
+    "storage_bucket": "assro-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878168982806:android:944e6d39bd6c0266c4fc37",
+        "android_client_info": {
+          "package_name": "com.shehab.shooping_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878168982806-qlq66l7hcvn2ac8fe4lr0nbtopnba8h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shehab.shooping_app",
+            "certificate_hash": "846f63776ddaa314df9ab9dc05127cc86cf6d660"
+          }
+        },
+        {
+          "client_id": "878168982806-42i8a94dburcubne67b8jobp657utts2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4KG9A9P2y4fLtNElHuf0eyUDFwW_EoCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878168982806-42i8a94dburcubne67b8jobp657utts2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
