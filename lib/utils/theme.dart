@@ -16,12 +16,16 @@ const Color languageSettings = Color(0xffCB256C);
 
 class ThemesApp {
   static final light = ThemeData(
-      primaryColor: mainColor,
-      colorScheme: ColorScheme.fromSwatch()
-          .copyWith(background: Colors.white, brightness: Brightness.light));
+    primaryColor: mainColor,
+    colorScheme: ColorScheme.fromSwatch(
+        backgroundColor: Colors.white, brightness: Brightness.light),
+  );
 
   static final dark = ThemeData(
-      primaryColor: darkGreyClr,
-      colorScheme: ColorScheme.fromSwatch()
-          .copyWith(background: darkGreyClr, brightness: Brightness.dark));
+    primaryColor: darkGreyClr,
+    colorScheme: ColorScheme.fromSwatch(
+      backgroundColor: darkGreyClr,
+      brightness: Brightness.dark,
+    ),
+  );
 }

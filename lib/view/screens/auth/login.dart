@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/config/themes/theme.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
-import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/utils/my_string.dart';
 
-import '../../../config/themes/theme.dart';
+import '../../../routes/app_routes.dart';
+import '../../../utils/my_string.dart';
 import '../../widget/auth/auth_button.dart';
 import '../../widget/auth/auth_text_field.dart';
 import '../../widget/auth/down_container.dart';
@@ -22,6 +22,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          backgroundColor: context.theme.colorScheme.background,
           appBar: AppBar(
             backgroundColor: !Get.isDarkMode ? Colors.white : darkGreyClr,
             elevation: 0,
@@ -78,10 +79,10 @@ class LoginScreen extends StatelessWidget {
                             prefixIcon: !Get.isDarkMode
                                 ? Image.asset('assets/images/email.png')
                                 : const Icon(
-                                    Icons.email,
-                                    color: pinkClr,
-                                    size: 30,
-                                  ),
+                              Icons.email,
+                              color: pinkClr,
+                              size: 30,
+                            ),
                             suffixIcon: Text(''),
                           ),
                           const SizedBox(
@@ -97,28 +98,28 @@ class LoginScreen extends StatelessWidget {
                                 return null;
                               },
                               obscureText:
-                                  controller.isVisibility ? false : true,
+                              controller.isVisibility ? false : true,
                               hintText: 'Password'.tr,
                               prefixIcon: !Get.isDarkMode
                                   ? Image.asset('assets/images/lock.png')
                                   : const Icon(
-                                      Icons.lock,
-                                      color: pinkClr,
-                                      size: 30,
-                                    ),
+                                Icons.lock,
+                                color: pinkClr,
+                                size: 30,
+                              ),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   controller.visibility();
                                 },
                                 icon: controller.isVisibility
                                     ? const Icon(
-                                        Icons.visibility,
-                                        color: Colors.black,
-                                      )
+                                  Icons.visibility,
+                                  color: Colors.black,
+                                )
                                     : Icon(
-                                        Icons.visibility_off,
-                                        color: Colors.black,
-                                      ),
+                                  Icons.visibility_off,
+                                  color: Colors.black,
+                                ),
                               ),
                             );
                           }),
@@ -167,7 +168,7 @@ class LoginScreen extends StatelessWidget {
                           TextUtils(
                               fontSize: 20,
                               color:
-                                  !Get.isDarkMode ? Colors.black : Colors.white,
+                              !Get.isDarkMode ? Colors.black : Colors.white,
                               fontWeight: FontWeight.bold,
                               underLine: TextDecoration.none,
                               text: 'OR'.tr),

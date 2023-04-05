@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/settings_controller.dart';
-import '../../../config/utils/my_string.dart';
-import '../../../config/themes/theme.dart';
+
+import '../../../utils/my_string.dart';
+import '../../../utils/theme.dart';
 import '../text_utils.dart';
 
 class LanguageWidget extends StatelessWidget {

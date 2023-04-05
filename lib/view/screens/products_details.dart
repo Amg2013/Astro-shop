@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:shooping_app/model/product_models.dart';
 import 'package:shooping_app/view/widget/products_details/clothes_info.dart';
 import 'package:shooping_app/view/widget/products_details/size_list.dart';
+
 import '../widget/products_details/add_cart.dart';
 import '../widget/products_details/image_slider.dart';
 
@@ -16,6 +17,7 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: context.theme.colorScheme.background,
         body: SingleChildScrollView(
           child: Column(
             children: [

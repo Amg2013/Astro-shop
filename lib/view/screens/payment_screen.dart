@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/config/themes/theme.dart';
+import 'package:shooping_app/utils/theme.dart';
 import 'package:shooping_app/view/widget/payment/delivery_container_widget.dart';
 import 'package:shooping_app/view/widget/payment/payment_method_widget.dart';
 
@@ -12,6 +12,7 @@ class PaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.colorScheme.background,
       appBar: AppBar(
         title: Text('Payment'.tr),
         elevation: 0,

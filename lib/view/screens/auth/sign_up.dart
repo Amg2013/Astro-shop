@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/auth_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/utils/my_string.dart';
+import 'package:shooping_app/utils/my_string.dart';
 
-import '../../../config/themes/theme.dart';
+import '../../../utils/theme.dart';
 import '../../widget/auth/auth_button.dart';
 import '../../widget/auth/auth_text_field.dart';
 import '../../widget/auth/check_widget.dart';
@@ -24,6 +24,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          backgroundColor: context.theme.colorScheme.background,
           appBar: AppBar(
             backgroundColor: Get.isDarkMode ? darkGreyClr : Colors.white,
             elevation: 0,
@@ -89,25 +90,28 @@ class SignUpScreen extends StatelessWidget {
                             height: 15,
                           ),
                           AuthTextFormField(
-                              controller: emailController,
-                              validator: (value) {
-                                if (!RegExp(validationEmail)
-                                    .hasMatch(value ?? '')) {
-                                  return 'Invalid Email'.tr;
-                                }
-                                return null;
-                              },
-                              obscureText: false,
-                              hintText: 'Email'.tr,
-                              prefixIcon: !Get.isDarkMode
-                                  ? Image.asset('assets/images/email.png')
-                                  : const Icon(
-                                      Icons.email,
-                                      color: pinkClr,
-                                      size: 30,
-                                    ),
-                              suffixIcon: Text('')),
-                          const SizedBox(height: 15),
+                            controller: emailController,
+                            validator: (value) {
+                              if (!RegExp(validationEmail)
+                                  .hasMatch(value ?? '')) {
+                                return 'Invalid Email'.tr;
+                              }
+                              return null;
+                            },
+                            obscureText: false,
+                            hintText: 'Email'.tr,
+                            prefixIcon: !Get.isDarkMode
+                                ? Image.asset('assets/images/email.png')
+                                : const Icon(
+                                    Icons.email,
+                                    color: pinkClr,
+                                    size: 30,
+                                  ),
+                            suffixIcon: Text(''),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
                           GetBuilder<AuthController>(builder: (controller) {
                             return AuthTextFormField(
                               controller: passwordController,
@@ -143,9 +147,13 @@ class SignUpScreen extends StatelessWidget {
                               ),
                             );
                           }),
-                          const SizedBox(height: 15),
+                          const SizedBox(
+                            height: 15,
+                          ),
                           CheckWidget(),
-                          const SizedBox(height: 20),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           GetBuilder<AuthController>(
                             builder: (_) {
                               return AuthButton(

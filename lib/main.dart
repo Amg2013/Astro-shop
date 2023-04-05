@@ -4,11 +4,12 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:shooping_app/controller/theme_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/utils/my_string.dart';
-import 'package:shooping_app/config/themes/theme.dart';
 import 'package:shooping_app/view/widget/settings/language/loclization_app.dart';
+
+import 'config/themes/theme.dart';
+import 'config/utils/my_string.dart';
+import 'controller/theme_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

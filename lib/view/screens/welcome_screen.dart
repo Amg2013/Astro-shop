@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/controller/settings_controller.dart';
+
 import '../../routes/app_routes.dart';
-import '../../config/utils/my_string.dart';
-import '../../config/themes/theme.dart';
+import '../../utils/my_string.dart';
+import '../../utils/theme.dart';
 import '../widget/text_utils.dart';
 
 class WelcomeScreen extends StatelessWidget {

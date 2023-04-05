@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_cast
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -17,8 +19,7 @@ class ExampleInstagramFilterSelection extends StatefulWidget {
       _ExampleInstagramFilterSelectionState();
 }
 
-class _ExampleInstagramFilterSelectionState
-    extends State<ExampleInstagramFilterSelection> {
+class _ExampleInstagramFilterSelectionState extends State<ExampleInstagramFilterSelection> {
   final _filters = [
     Colors.white,
     ...List.generate(
@@ -274,9 +275,7 @@ class CarouselFlowDelegate extends FlowDelegate {
       final opacity = 0.25 + (percentFromCenter * 0.75);
 
       final itemTransform = Matrix4.identity()
-        ..translate((size - itemExtent) / 2)
-        ..translate(itemXFromCenter)
-        ..translate(itemExtent / 2, itemExtent / 2)
+        ..translate((size - itemExtent) / 2)..translate(itemXFromCenter)..translate(itemExtent / 2, itemExtent / 2)
         ..multiply(Matrix4.diagonal3Values(itemScale, itemScale, 1.0))
         ..translate(-itemExtent / 2, -itemExtent / 2);
 

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/category_controller.dart';
 import 'package:shooping_app/config/themes/theme.dart';
+import 'package:shooping_app/controller/category_controller.dart';
+import 'package:shooping_app/view/screens/products_details.dart';
+
 import '../../controller/cart_controller.dart';
 import '../../controller/product_controller.dart';
 import '../../model/product_models.dart';
 import '../widget/text_utils.dart';
-import 'products_details.dart';
 
 class CategoryItem extends StatelessWidget {
   CategoryItem({Key? key, required this.categoryTitle}) : super(key: key);
@@ -19,6 +20,7 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: context.theme.colorScheme.background,
         appBar: AppBar(
           title: Text(categoryTitle),
           centerTitle: true,
@@ -49,9 +51,9 @@ class CategoryItem extends StatelessWidget {
                     productModels: categoryController.categoryList[index],
                     onTap: () {
                       Get.to(() => ProductDetailsScreen(
-                            productModels:
-                                categoryController.categoryList[index],
-                          ));
+                        productModels:
+                        categoryController.categoryList[index],
+                      ));
                     });
               });
         }));

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/model/product_models.dart';
 import 'package:shooping_app/routes/app_routes.dart';
-import '../config/themes/theme.dart';
+
+import '../utils/theme.dart';
 
 class CartController extends GetxController {
   var productMap = {}.obs;

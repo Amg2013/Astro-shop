@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/config/themes/theme.dart';
 import 'package:shooping_app/controller/cart_controller.dart';
 import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/themes/theme.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
 
 class CartTotal extends StatelessWidget {

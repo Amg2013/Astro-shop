@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shooping_app/view/widget/text_utils.dart';
+
 import '../widget/category/categor_widget.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.only(left: 15, top: 15),
         child: Column(

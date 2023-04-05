@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../../config/utils/my_string.dart';
+import '../../../../utils/my_string.dart';
 import 'ar.dart';
 import 'en.dart';
 import 'fr.dart';
