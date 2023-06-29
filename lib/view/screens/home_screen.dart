@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/utils/theme.dart';
-import 'package:shooping_app/view/widget/home/search_form_text.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../../utils/theme.dart';
+import '../widget/home/search_form_text.dart';
+import '../widget/text_utils.dart';
 
 import '../widget/home/card_item.dart';
 

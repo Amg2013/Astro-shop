@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/main_controller.dart';
-import 'package:shooping_app/controller/payment_controller.dart';
-import 'package:shooping_app/controller/settings_controller.dart';
+import '../controller/main_controller.dart';
+import '../controller/payment_controller.dart';
+import '../controller/settings_controller.dart';
 
 class MainBinding extends Bindings {
   @override

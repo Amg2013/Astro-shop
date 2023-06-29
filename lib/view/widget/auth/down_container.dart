@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../text_utils.dart';
 import '../../../config/themes/theme.dart';
 
 class DownContainer extends StatelessWidget {

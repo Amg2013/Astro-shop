@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/cart_controller.dart';
-import 'package:shooping_app/model/product_models.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../../../controller/cart_controller.dart';
+import '../../../model/product_models.dart';
+import '../text_utils.dart';
 import '../../../config/themes/theme.dart';
 
 class AddCart extends StatelessWidget {

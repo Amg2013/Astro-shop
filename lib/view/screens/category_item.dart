@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/config/themes/theme.dart';
-import 'package:shooping_app/controller/category_controller.dart';
-import 'package:shooping_app/view/screens/products_details.dart';
+import '../../config/themes/theme.dart';
+import '../../controller/category_controller.dart';
+import 'products_details.dart';
 
 import '../../controller/cart_controller.dart';
 import '../../controller/product_controller.dart';
@@ -51,9 +51,9 @@ class CategoryItem extends StatelessWidget {
                     productModels: categoryController.categoryList[index],
                     onTap: () {
                       Get.to(() => ProductDetailsScreen(
-                        productModels:
-                        categoryController.categoryList[index],
-                      ));
+                            productModels:
+                                categoryController.categoryList[index],
+                          ));
                     });
               });
         }));

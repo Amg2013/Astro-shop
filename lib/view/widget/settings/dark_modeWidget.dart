@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/theme_controller.dart';
-import 'package:shooping_app/config/themes/theme.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../../../controller/theme_controller.dart';
+import '../../../config/themes/theme.dart';
+import '../text_utils.dart';
 import '../../../controller/settings_controller.dart';
 
 class DarkModeWidget extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../widget/text_utils.dart';
 
 import '../widget/category/categor_widget.dart';
 

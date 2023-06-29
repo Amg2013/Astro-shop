@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/settings_controller.dart';
+import '../../../controller/settings_controller.dart';
 
 import '../../../utils/my_string.dart';
 import '../../../utils/theme.dart';

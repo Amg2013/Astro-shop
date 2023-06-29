@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:shooping_app/model/product_models.dart';
-import 'package:shooping_app/services/category_services.dart';
+import '../model/product_models.dart';
+import '../services/category_services.dart';
 
 class CategoryController extends GetxController {
   var categoryNameList = <String>[].obs;

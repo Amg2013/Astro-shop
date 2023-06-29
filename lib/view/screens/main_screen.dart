@@ -1,10 +1,10 @@
 import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/cart_controller.dart';
-import 'package:shooping_app/controller/main_controller.dart';
-import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/utils/theme.dart';
+import '../../controller/cart_controller.dart';
+import '../../controller/main_controller.dart';
+import '../../routes/app_routes.dart';
+import '../../utils/theme.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/model/product_models.dart';
-import 'package:shooping_app/routes/app_routes.dart';
+import '../model/product_models.dart';
+import '../routes/app_routes.dart';
 
 import '../utils/theme.dart';
 

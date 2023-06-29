@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/utils/theme.dart';
+import '../../../utils/theme.dart';
 
 // ignore: must_be_immutable
 class PhoneTextForm extends StatelessWidget {

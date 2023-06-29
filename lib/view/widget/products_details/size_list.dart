@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/config/themes/theme.dart';
+import '../../../config/themes/theme.dart';
 
 class SizeList extends StatefulWidget {
   const SizeList({Key? key}) : super(key: key);

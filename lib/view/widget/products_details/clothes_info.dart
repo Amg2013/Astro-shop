@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
-import 'package:shooping_app/controller/product_controller.dart';
-import 'package:shooping_app/config/themes/theme.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../../../controller/product_controller.dart';
+import '../../../config/themes/theme.dart';
+import '../text_utils.dart';
 
 class ClothesInfo extends StatelessWidget {
   ClothesInfo(

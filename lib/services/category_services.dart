@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:shooping_app/utils/my_string.dart';
+import '../utils/my_string.dart';
 
 import '../model/category_model.dart';
 import '../model/product_models.dart';

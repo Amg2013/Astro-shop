@@ -1,7 +1,6 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
-import 'package:square_in_app_payments/in_app_payments.dart';
 
 class PaymentController extends GetxController {
   final phoneNumber = 'Phone number'.obs;
@@ -47,8 +46,8 @@ class PaymentController extends GetxController {
 
   //Paypal sandbox payment
 
-  Future<void> initSquarePayment() async {
-    await InAppPayments.setSquareApplicationId(
-        'sandbox-sq0idb-kw1AP4SAqjucwSR4PWYG-g');
-  }
+  // Future<void> initSquarePayment() async {
+  //   await InAppPayments.setSquareApplicationId(
+  //       'sandbox-sq0idb-kw1AP4SAqjucwSR4PWYG-g');
+  // }
 }

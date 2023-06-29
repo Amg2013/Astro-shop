@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/themes/theme.dart';
+import '../../../routes/app_routes.dart';
+import '../../../config/themes/theme.dart';
 
 class EmptyCart extends StatelessWidget {
   const EmptyCart({Key? key}) : super(key: key);

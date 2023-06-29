@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/cart_controller.dart';
-import 'package:shooping_app/config/themes/theme.dart';
-import 'package:shooping_app/view/widget/cart/cart_product.dart';
-import 'package:shooping_app/view/widget/cart/empty_cart.dart';
+import '../../controller/cart_controller.dart';
+import '../../config/themes/theme.dart';
+import '../widget/cart/cart_product.dart';
+import '../widget/cart/empty_cart.dart';
 import '../widget/cart/cart_total.dart';
 
 class CartScreen extends StatelessWidget {

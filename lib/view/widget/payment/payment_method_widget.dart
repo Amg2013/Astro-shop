@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shooping_app/config/themes/theme.dart';
+import '../../../config/themes/theme.dart';
 import '../text_utils.dart';
 
 class PaymentMethodWidget extends StatefulWidget {

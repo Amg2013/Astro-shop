@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:shooping_app/model/product_models.dart';
-import 'package:shooping_app/services/products_sevices.dart';
+import '../model/product_models.dart';
+import '../services/products_sevices.dart';
 
 class ProductController extends GetxController {
   var productList = <ProductModels>[].obs;

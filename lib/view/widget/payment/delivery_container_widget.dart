@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/payment_controller.dart';
-import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/themes/theme.dart';
-import 'package:shooping_app/view/widget/payment/phone_text_field.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../../../controller/payment_controller.dart';
+import '../../../routes/app_routes.dart';
+import '../../../config/themes/theme.dart';
+import 'phone_text_field.dart';
+import '../text_utils.dart';
 import '../../../controller/auth_controller.dart';
 
 class DeliveryContainerWidget extends StatefulWidget {

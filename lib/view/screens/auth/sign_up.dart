@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/auth_controller.dart';
-import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/utils/my_string.dart';
+import '../../../controller/auth_controller.dart';
+import '../../../routes/app_routes.dart';
+import '../../../utils/my_string.dart';
 
 import '../../../utils/theme.dart';
 import '../../widget/auth/auth_button.dart';

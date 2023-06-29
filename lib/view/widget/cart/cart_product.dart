@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/cart_controller.dart';
-import 'package:shooping_app/model/product_models.dart';
-import 'package:shooping_app/config/themes/theme.dart';
+import '../../../controller/cart_controller.dart';
+import '../../../model/product_models.dart';
+import '../../../config/themes/theme.dart';
 
 class CartProductCard extends StatelessWidget {
   CartProductCard(

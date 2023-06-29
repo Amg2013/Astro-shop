@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/cart_controller.dart';
-import 'package:shooping_app/controller/product_controller.dart';
-import 'package:shooping_app/model/product_models.dart';
-import 'package:shooping_app/config/themes/theme.dart';
-import 'package:shooping_app/view/screens/products_details.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../../../controller/cart_controller.dart';
+import '../../../controller/product_controller.dart';
+import '../../../model/product_models.dart';
+import '../../../config/themes/theme.dart';
+import '../../screens/products_details.dart';
+import '../text_utils.dart';
 
 class CardItems extends StatelessWidget {
   CardItems({Key? key}) : super(key: key);

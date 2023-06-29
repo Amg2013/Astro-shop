@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/product_controller.dart';
+import '../../../controller/product_controller.dart';
 
 class SearchTextForm extends StatelessWidget {
   SearchTextForm({Key? key}) : super(key: key);

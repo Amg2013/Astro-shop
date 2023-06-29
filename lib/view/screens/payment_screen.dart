@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/utils/theme.dart';
-import 'package:shooping_app/view/widget/payment/delivery_container_widget.dart';
-import 'package:shooping_app/view/widget/payment/payment_method_widget.dart';
+import '../../utils/theme.dart';
+import '../widget/payment/delivery_container_widget.dart';
+import '../widget/payment/payment_method_widget.dart';
 
 import '../widget/text_utils.dart';
 

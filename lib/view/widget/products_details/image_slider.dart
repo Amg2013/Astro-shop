@@ -2,9 +2,9 @@ import 'package:badges/badges.dart' as badge;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/controller/cart_controller.dart';
-import 'package:shooping_app/routes/app_routes.dart';
-import 'package:shooping_app/config/themes/theme.dart';
+import '../../../controller/cart_controller.dart';
+import '../../../routes/app_routes.dart';
+import '../../../config/themes/theme.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../category/ExampleInstagramFilterSelection.dart';
 

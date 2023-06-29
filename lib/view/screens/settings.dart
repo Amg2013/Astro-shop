@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shooping_app/view/widget/settings/profile_widget.dart';
-import 'package:shooping_app/view/widget/text_utils.dart';
+import '../widget/settings/profile_widget.dart';
+import '../widget/text_utils.dart';
 
 import '../../utils/theme.dart';
 import '../widget/settings/dark_modeWidget.dart';
