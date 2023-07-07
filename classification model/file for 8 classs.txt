@@ -1,0 +1,8 @@
+Laptop
+backpack
+bag
+blazer
+hat
+shoes
+sofa
+wristwatch

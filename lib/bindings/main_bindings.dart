@@ -8,6 +8,6 @@ class MainBinding extends Bindings {
   void dependencies() {
     Get.put(MainController());
     Get.put(SettingsController(), permanent: true);
-    Get.put(PaymentController(), permanent: true);
+    // Get.put(PaymentController(), permanent: true);
   }
 }

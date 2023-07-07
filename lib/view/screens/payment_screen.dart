@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../utils/theme.dart';
-import '../widget/payment/delivery_container_widget.dart';
 import '../widget/payment/payment_method_widget.dart';
 
 import '../widget/text_utils.dart';
@@ -35,7 +34,7 @@ class PaymentScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const DeliveryContainerWidget(),
+              //  const DeliveryContainerWidget(),
               const SizedBox(
                 height: 20,
               ),

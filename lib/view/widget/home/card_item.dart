@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/view/screens/augmanted_reality_screen.dart';
 import '../../../controller/cart_controller.dart';
 import '../../../controller/product_controller.dart';
 import '../../../model/product_models.dart';
@@ -124,14 +125,14 @@ class CardItems extends StatelessWidget {
               }),
               Container(
                 width: double.infinity,
-                height: 145,
+                height: 135,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
                 child: Image.network(image),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+                padding: const EdgeInsets.only(left: 15, top: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -140,30 +141,31 @@ class CardItems extends StatelessWidget {
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
-                    Container(
-                      width: 45,
-                      height: 20,
-                      decoration: BoxDecoration(
-                          color: mainColor,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 3, right: 3),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TextUtils(
-                                fontSize: 13,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                underLine: TextDecoration.none,
-                                text: '$rate'),
-                            const Icon(
-                              Icons.star_border_outlined,
-                              color: Colors.white,
-                              size: 13,
-                            )
-                          ],
-                        ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(AugmentedRealityScreen(imageLink: image));
+                      },
+                      child: Container(
+                        width: 65,
+                        height: 30,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/ar.png")),
+                            borderRadius: BorderRadius.circular(10)),
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(left: 3, right: 3),
+                        //   child: Row(
+                        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //     children: [
+                        //       TextUtils(
+                        //           fontSize: 13,
+                        //           color: Colors.white,
+                        //           fontWeight: FontWeight.bold,
+                        //           underLine: TextDecoration.none,
+                        //           text: '$rate'),
+                        //     ],
+                        //   ),
+                        // ),
                       ),
                     )
                   ],

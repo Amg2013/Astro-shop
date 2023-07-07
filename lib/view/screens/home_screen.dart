@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
+import 'package:shooping_app/services/TfliteModel.dart';
 import '../../utils/theme.dart';
 import '../widget/home/search_form_text.dart';
 import '../widget/text_utils.dart';
@@ -15,6 +17,29 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
+      floatingActionButton: SpeedDial(
+        closeManually: true,
+        spaceBetweenChildren: 12,
+        child: IconButton(onPressed: null, icon: Icon(Icons.menu_outlined)),
+        animatedIcon: AnimatedIcons.menu_close,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.add_a_photo_outlined),
+              label: 'image classification ',
+              onTap: () => showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return TfliteModel();
+                    },
+                  )),
+          SpeedDialChild(
+            child: IconButton(onPressed: null, icon: Icon(Icons.abc)),
+          ),
+          SpeedDialChild(
+            child: IconButton(onPressed: null, icon: Icon(Icons.abc)),
+          )
+        ],
+      ),
       backgroundColor: context.theme.colorScheme.background,
       body: Column(
         children: [
@@ -51,6 +76,28 @@ class HomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   SearchTextForm(),
+                  // SearchTextForm(),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) => const TfliteModel()));
+                  //   },
+                  //   child: Container(
+                  //     height: 50,
+                  //     width: 220,
+                  //     decoration: BoxDecoration(
+                  //         border: Border.all(
+                  //             style: BorderStyle.solid,
+                  //             width: 1,
+                  //             strokeAlign: 1)),
+                  //     child: Row(children: [
+                  //       Text('search using image'),
+                  //       Icon(Icons.add_a_photo_outlined)
+                  //     ]),
+                  //   ),
+                  // )
                 ],
               ),
             ),
